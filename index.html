@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Примеры сайтов — портфолио</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101114;--ink:#f0f1f3;--muted:#8b8f98;--acc:#6ea8ff;--line:#26282e;--panel:#17181c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Sora",sans-serif;line-height:1.6;padding:56px 24px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:clamp(26px,4vw,38px);font-weight:700;margin-bottom:10px}
+h1 span{color:var(--acc)}
+.sub{color:var(--muted);margin-bottom:44px;max-width:560px;font-size:15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px;text-decoration:none;color:var(--ink);transition:.15s}
+a.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .niche{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
+.card h2{font-size:19px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:13.5px}
+.card .go{margin-top:14px;font-size:13px;color:var(--acc)}
+.real{margin-top:44px;border-top:1px solid var(--line);padding-top:30px}
+.real h3{font-size:15px;color:var(--muted);font-weight:400;margin-bottom:14px}
+.real a{color:var(--acc);text-decoration:none;margin-right:24px;font-size:14.5px}
+.real a:hover{text-decoration:underline}
+.foot{margin-top:44px;color:var(--muted);font-size:12.5px}
+@media(max-width:680px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Примеры сайтов <span>для вашей ниши</span></h1>
+  <p class="sub">Демо-макеты вымышленных брендов — так может выглядеть ваш сайт через 3 дня. Каждый пример — в характере своей ниши, не шаблон.</p>
+  <div class="grid">
+    <a class="card" href="salon/"><div class="niche">Салон красоты</div><h2>«Лилия»</h2><p>Светлый люкс: антиква, воздух, запись в один клик</p><div class="go">Открыть демо →</div></a>
+    <a class="card" href="autoservice/"><div class="niche">Автосервис</div><h2>«Гараж 77»</h2><p>Жёсткий и честный: цены, гарантия, запись на диагностику</p><div class="go">Открыть демо →</div></a>
+    <a class="card" href="spa/"><div class="niche">Массаж и SPA</div><h2>«Тепло»</h2><p>Тёплый минимализм: прайс листом, программы, запись</p><div class="go">Открыть демо →</div></a>
+    <a class="card" href="banya/"><div class="niche">Баня / сауна</div><h2>«Пар»</h2><p>Дерево и жар: парные с ценами за час, бронь в WhatsApp</p><div class="go">Открыть демо →</div></a>
+    <a class="card" href="tattoo/"><div class="niche">Тату-студия</div><h2>«Чернила»</h2><p>Брутальная типографика: стили, работы, честные цены</p><div class="go">Открыть демо →</div></a>
+    <a class="card" href="detailing/"><div class="niche">Детейлинг</div><h2>BLIK</h2><p>Техно-глянец: услуги, этапы, расчёт по фото авто</p><div class="go">Открыть демо →</div></a>
+    <a class="card" href="dental/"><div class="niche">Стоматология</div><h2>«Эмаль»</h2><p>Доверие и прозрачность: цены сразу, бесплатный осмотр</p><div class="go">Открыть демо →</div></a>
+  </div>
+  <div class="real">
+    <h3>Живые проекты (не демо):</h3>
+    <a href="https://samoschet.online" target="_blank">samoschet.online — сервис для самозанятых</a>
+    <a href="https://vaultvision.tech" target="_blank">vaultvision.tech — финансовая аналитика</a>
+  </div>
+  <p class="foot">Все бренды на демо-страницах вымышленные. Хотите такой же сайт для своего бизнеса за 3 дня — напишите мне на Авито.</p>
+</div>
+</body>
+</html>

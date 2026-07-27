@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стоматология «Эмаль» — демо-сайт</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7fafc;--white:#fff;--ink:#16283a;--muted:#64788c;--teal:#0e9d8c;--teal2:#0b8073;--soft:#e3f2f0;--line:#e2eaf0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",sans-serif;line-height:1.65}
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+.demo-badge{position:fixed;top:14px;right:-40px;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.1em;padding:5px 50px;transform:rotate(35deg);z-index:99;opacity:.9}
+header{padding:16px 0;background:var(--white);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:"Sora",sans-serif;font-weight:700;font-size:21px}
+.logo span{color:var(--teal)}
+.head-right{display:flex;align-items:center;gap:22px}
+nav a{color:var(--muted);text-decoration:none;font-size:13.5px;margin-left:20px}
+nav a:hover{color:var(--teal)}
+.phone{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+.hero{padding:66px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.hero h1{font-family:"Sora",sans-serif;font-size:clamp(30px,4.6vw,44px);line-height:1.18;font-weight:700}
+.hero h1 span{color:var(--teal)}
+.hero p{color:var(--muted);font-size:16.5px;max-width:460px;margin:18px 0 28px}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:15px 30px;border-radius:10px;transition:.15s}
+.btn:hover{background:var(--teal2)}
+.btn.ghost{background:var(--soft);color:var(--teal);margin-left:10px}
+.hero-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 14px 40px rgba(22,40,58,.07)}
+.hero-card h3{font-family:"Sora",sans-serif;font-size:16px;margin-bottom:14px}
+.hc-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.hc-row b{color:var(--teal)}
+.hero-card .note{font-size:12.5px;color:var(--muted);margin-top:12px}
+.badges{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
+.badges div{font-size:13px;color:var(--muted)}
+.badges b{display:block;font-family:"Sora",sans-serif;font-size:22px;color:var(--ink)}
+.sec{padding:64px 0}
+.sec h2{font-family:"Sora",sans-serif;font-size:28px;font-weight:700;margin-bottom:8px}
+.sec .sub{color:var(--muted);margin-bottom:36px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card .ic{width:42px;height:42px;border-radius:10px;background:var(--soft);color:var(--teal);display:flex;align-items:center;justify-content:center;font-family:"Sora",sans-serif;font-weight:700;margin-bottom:14px}
+.card h3{font-size:16px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:13.5px;margin-bottom:12px}
+.card .pr{font-family:"Sora",sans-serif;font-weight:700;color:var(--teal);font-size:16px}
+.trust-strip{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:38px 0}
+.trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ts b{display:block;font-size:14.5px;margin-bottom:4px}
+.ts span{color:var(--muted);font-size:13px}
+.cta{background:linear-gradient(135deg,var(--teal),#0c7a90);border-radius:18px;color:#fff;padding:52px;text-align:center;margin:64px 0}
+.cta h2{font-family:"Sora",sans-serif;font-size:26px;margin-bottom:8px}
+.cta p{opacity:.85;margin-bottom:24px;font-size:15px}
+.cta .btn{background:#fff;color:var(--teal)}
+footer{padding:26px 0 38px;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:840px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.trust-strip .wrap{grid-template-columns:1fr 1fr}nav{display:none}}
+</style>
+</head>
+<body>
+<div class="demo-badge">ДЕМО-МАКЕТ</div>
+<header><div class="wrap">
+  <div class="logo">Эмаль<span>+</span></div>
+  <div class="head-right">
+    <nav><a href="#services">Услуги</a><a href="#why">О клинике</a><a href="#zapis">Запись</a></nav>
+    <a class="phone" href="#">+7 (900) 000-00-00</a>
+  </div>
+</div></header>
+
+<section class="hero"><div class="wrap" style="display:contents">
+  <div>
+    <h1>Стоматология, в которую <span>не страшно</span> возвращаться</h1>
+    <p>Лечим без боли и навязанных услуг: план лечения с ценой до начала, фото до/после каждого этапа, рассрочка 0%.</p>
+    <a class="btn" href="#zapis">Записаться на осмотр</a>
+    <a class="btn ghost" href="#services">Цены</a>
+    <div class="badges">
+      <div><b>14 лет</b>клинике</div>
+      <div><b>4.9 ★</b>рейтинг на картах</div>
+      <div><b>0 ₽</b>первичный осмотр</div>
+      <div><b>0%</b>рассрочка до 12 мес</div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <h3>Сколько это стоит — сразу</h3>
+    <div class="hc-row"><span>Осмотр и план лечения</span><b>0 ₽</b></div>
+    <div class="hc-row"><span>Лечение кариеса</span><b>от 4 900 ₽</b></div>
+    <div class="hc-row"><span>Профгигиена</span><b>от 5 500 ₽</b></div>
+    <div class="hc-row"><span>Имплант «под ключ»</span><b>от 55 000 ₽</b></div>
+    <div class="note">Цена в плане лечения фиксируется — в процессе не меняется.</div>
+  </div>
+</div></section>
+
+<section class="sec" id="services"><div class="wrap">
+  <h2>Услуги</h2>
+  <p class="sub">Полный цикл: от гигиены до имплантации — в одной клинике</p>
+  <div class="grid">
+    <div class="card"><div class="ic">01</div><h3>Лечение кариеса</h3><p>Под микроскопом, с анестезией нового поколения.</p><div class="pr">от 4 900 ₽</div></div>
+    <div class="card"><div class="ic">02</div><h3>Профессиональная гигиена</h3><p>Ультразвук + AirFlow, полировка и укрепление эмали.</p><div class="pr">от 5 500 ₽</div></div>
+    <div class="card"><div class="ic">03</div><h3>Имплантация</h3><p>Импланты с пожизненной гарантией производителя.</p><div class="pr">от 55 000 ₽</div></div>
+    <div class="card"><div class="ic">04</div><h3>Виниры и эстетика</h3><p>Цифровое моделирование улыбки до начала работ.</p><div class="pr">от 28 000 ₽</div></div>
+    <div class="card"><div class="ic">05</div><h3>Детский приём</h3><p>Адаптационные визиты, лечение в игровой форме.</p><div class="pr">от 3 500 ₽</div></div>
+    <div class="card"><div class="ic">06</div><h3>Исправление прикуса</h3><p>Элайнеры и брекеты, план в 3D до старта.</p><div class="pr">от 120 000 ₽</div></div>
+  </div>
+</div></section>
+
+<div class="trust-strip" id="why"><div class="wrap">
+  <div class="ts"><b>Без навязывания</b><span>лечим то, что нужно лечить — план обосновываем снимками</span></div>
+  <div class="ts"><b>Цена до начала</b><span>смета в договоре, доплат «в кресле» не бывает</span></div>
+  <div class="ts"><b>Стерильность</b><span>обработка инструмента по протоколу, одноразовое — одноразово</span></div>
+  <div class="ts"><b>Гарантия в договоре</b><span>на пломбы — 2 года, на импланты — по производителю</span></div>
+</div></div>
+
+<section class="wrap" id="zapis">
+  <div class="cta">
+    <h2>Запишитесь на бесплатный осмотр</h2>
+    <p>30 минут: осмотр, снимки при необходимости и честный план лечения с ценами</p>
+    <a class="btn" href="#">Выбрать время</a>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span>Стоматология «Эмаль» — вымышленный бренд, демо-макет</span>
+  <span>Сайт-пример: одностраничник для стоматологии</span>
+</div></footer>
+</body>
+</html>

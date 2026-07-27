@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Детейлинг-центр BLIK — демо-сайт</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e14;--panel:#111722;--ink:#eef2f8;--muted:#7d8a9c;--cyan:#2fd6ff;--cyan2:#19b8e0;--line:#1e2836}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",sans-serif;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.demo-badge{position:fixed;top:14px;right:-40px;background:var(--cyan);color:#0a0e14;font-size:11px;font-weight:700;letter-spacing:.1em;padding:5px 50px;transform:rotate(35deg);z-index:99}
+header{padding:18px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:"Chakra Petch",sans-serif;font-size:23px;font-weight:700;letter-spacing:.08em}
+.logo span{color:var(--cyan)}
+.phone{color:var(--ink);text-decoration:none;font-weight:700;font-size:16px}
+.phone small{display:block;color:var(--muted);font-weight:400;font-size:11.5px;text-align:right}
+.hero{padding:72px 0;background:linear-gradient(120deg,#0a0e14 40%,#0f1b2a)}
+.hero .tag{color:var(--cyan);font-family:"Chakra Petch",sans-serif;letter-spacing:.2em;font-size:12px;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-family:"Chakra Petch",sans-serif;font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.1;text-transform:uppercase;max-width:700px}
+.hero h1 span{color:var(--cyan)}
+.hero p{color:var(--muted);font-size:16.5px;max-width:520px;margin:20px 0 30px}
+.btn{display:inline-block;background:var(--cyan);color:#0a0e14;text-decoration:none;font-weight:700;font-size:14.5px;padding:15px 32px;border-radius:4px;transition:.15s;text-transform:uppercase;letter-spacing:.04em;font-family:"Chakra Petch",sans-serif}
+.btn:hover{background:var(--cyan2)}
+.sec{padding:66px 0}
+.sec h2{font-family:"Chakra Petch",sans-serif;font-size:28px;text-transform:uppercase;margin-bottom:30px}
+.sec h2 span{color:var(--cyan)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:24px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;width:40px;height:3px;background:var(--cyan)}
+.card h3{font-size:16px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+.card .pr{font-family:"Chakra Petch",sans-serif;color:var(--cyan);font-size:18px;font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stp{border:1px solid var(--line);border-radius:8px;padding:20px;background:var(--panel)}
+.stp .n{font-family:"Chakra Petch",sans-serif;color:var(--cyan);font-size:22px;font-weight:700;margin-bottom:8px}
+.stp b{display:block;font-size:14.5px;margin-bottom:4px}
+.stp span{color:var(--muted);font-size:12.5px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba div{aspect-ratio:16/9;background:linear-gradient(140deg,#1a2433,#0f1622);display:flex;align-items:center;justify-content:center;color:#4a5a70;border:1px solid var(--line);border-radius:8px;font-size:13px}
+.cta{background:var(--panel);border:1px solid var(--cyan);border-radius:10px;padding:48px;text-align:center;margin-bottom:66px}
+.cta h2{margin-bottom:8px}
+.cta p{color:var(--muted);margin-bottom:24px}
+footer{padding:28px 0;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:820px){.grid,.steps{grid-template-columns:1fr}.ba{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-badge">ДЕМО-МАКЕТ</div>
+<header><div class="wrap">
+  <div class="logo">BLIK<span>_</span>DETAILING</div>
+  <a class="phone" href="#">+7 (900) 000-00-00<small>ежедневно 9:00–21:00</small></a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="tag">Детейлинг-центр полного цикла</div>
+  <h1>Ваш автомобиль. <span>Только лучше.</span></h1>
+  <p>Полировка, керамика, химчистка и оклейка плёнкой. Фотоотчёт каждого этапа, гарантия на покрытия до 3 лет.</p>
+  <a class="btn" href="#zayavka">Рассчитать стоимость</a>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Услуги <span>и цены</span></h2>
+  <div class="grid">
+    <div class="card"><h3>Полировка кузова</h3><p>Убираем паутинку и голограммы, возвращаем глубину цвета.</p><div class="pr">от 12 000 ₽</div></div>
+    <div class="card"><h3>Керамическое покрытие</h3><p>Защита ЛКП до 3 лет, гидрофоб, лёгкая мойка.</p><div class="pr">от 25 000 ₽</div></div>
+    <div class="card"><h3>Химчистка салона</h3><p>Полная разборка, пар, озонирование. Как из салона.</p><div class="pr">от 9 000 ₽</div></div>
+    <div class="card"><h3>Оклейка полиуретаном</h3><p>Антигравийная защита зон риска или всего кузова.</p><div class="pr">от 30 000 ₽</div></div>
+    <div class="card"><h3>Бронирование стёкол</h3><p>Атермальные и защитные плёнки, разрешённые ГОСТ.</p><div class="pr">от 7 000 ₽</div></div>
+    <div class="card"><h3>Предпродажная подготовка</h3><p>Комплекс: кузов + салон + фото для объявления.</p><div class="pr">от 15 000 ₽</div></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <h2>Как <span>работаем</span></h2>
+  <div class="steps">
+    <div class="stp"><div class="n">01</div><b>Осмотр и смета</b><span>фиксируем цену до начала работ</span></div>
+    <div class="stp"><div class="n">02</div><b>Работы по регламенту</b><span>каждый этап — по чек-листу</span></div>
+    <div class="stp"><div class="n">03</div><b>Фотоотчёт</b><span>присылаем процесс в мессенджер</span></div>
+    <div class="stp"><div class="n">04</div><b>Выдача и гарантия</b><span>принимаете при ярком свете</span></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <h2>До / <span>после</span></h2>
+  <div class="ba"><div>фото «до»</div><div>фото «после»</div></div>
+</div></section>
+
+<section class="wrap" id="zayavka">
+  <div class="cta">
+    <h2>Пришлите фото авто</h2>
+    <p>Посчитаем точную стоимость по фото за 15 минут — без записи и визита</p>
+    <a class="btn" href="#">Отправить в WhatsApp</a>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span>BLIK Detailing — вымышленный бренд, демо-макет</span>
+  <span>Сайт-пример: одностраничник для детейлинг-центра</span>
+</div></footer>
+</body>
+</html>
