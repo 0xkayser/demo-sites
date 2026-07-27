@@ -1,53 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Примеры сайтов — портфолио</title>
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#101114;--ink:#f0f1f3;--muted:#8b8f98;--acc:#6ea8ff;--line:#26282e;--panel:#17181c}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:"Sora",sans-serif;line-height:1.6;padding:56px 24px}
-.wrap{max-width:900px;margin:0 auto}
-h1{font-size:clamp(26px,4vw,38px);font-weight:700;margin-bottom:10px}
-h1 span{color:var(--acc)}
-.sub{color:var(--muted);margin-bottom:44px;max-width:560px;font-size:15px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px;text-decoration:none;color:var(--ink);transition:.15s}
-a.card:hover{border-color:var(--acc);transform:translateY(-2px)}
-.card .niche{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
-.card h2{font-size:19px;margin-bottom:6px}
-.card p{color:var(--muted);font-size:13.5px}
-.card .go{margin-top:14px;font-size:13px;color:var(--acc)}
-.real{margin-top:44px;border-top:1px solid var(--line);padding-top:30px}
-.real h3{font-size:15px;color:var(--muted);font-weight:400;margin-bottom:14px}
-.real a{color:var(--acc);text-decoration:none;margin-right:24px;font-size:14.5px}
-.real a:hover{text-decoration:underline}
-.foot{margin-top:44px;color:var(--muted);font-size:12.5px}
-@media(max-width:680px){.grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AVITO / Design Lab — сайты для бизнеса</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="redesign.css">
+  <script src="redesign.js" defer></script>
 </head>
-<body>
-<div class="wrap">
-  <h1>Примеры сайтов <span>для вашей ниши</span></h1>
-  <p class="sub">Демо-макеты вымышленных брендов — так может выглядеть ваш сайт через 3 дня. Каждый пример — в характере своей ниши, не шаблон.</p>
-  <div class="grid">
-    <a class="card" href="salon/"><div class="niche">Салон красоты</div><h2>«Лилия»</h2><p>Светлый люкс: антиква, воздух, запись в один клик</p><div class="go">Открыть демо →</div></a>
-    <a class="card" href="autoservice/"><div class="niche">Автосервис</div><h2>«Гараж 77»</h2><p>Жёсткий и честный: цены, гарантия, запись на диагностику</p><div class="go">Открыть демо →</div></a>
-    <a class="card" href="spa/"><div class="niche">Массаж и SPA</div><h2>«Тепло»</h2><p>Тёплый минимализм: прайс листом, программы, запись</p><div class="go">Открыть демо →</div></a>
-    <a class="card" href="banya/"><div class="niche">Баня / сауна</div><h2>«Пар»</h2><p>Дерево и жар: парные с ценами за час, бронь в WhatsApp</p><div class="go">Открыть демо →</div></a>
-    <a class="card" href="tattoo/"><div class="niche">Тату-студия</div><h2>«Чернила»</h2><p>Брутальная типографика: стили, работы, честные цены</p><div class="go">Открыть демо →</div></a>
-    <a class="card" href="detailing/"><div class="niche">Детейлинг</div><h2>BLIK</h2><p>Техно-глянец: услуги, этапы, расчёт по фото авто</p><div class="go">Открыть демо →</div></a>
-    <a class="card" href="dental/"><div class="niche">Стоматология</div><h2>«Эмаль»</h2><p>Доверие и прозрачность: цены сразу, бесплатный осмотр</p><div class="go">Открыть демо →</div></a>
+<body class="rebuild site-index">
+  <div class="r-page">
+    <header class="r-wrap r-nav">
+      <a class="r-wordmark" href="./">AVITO / DESIGN LAB</a>
+      <nav class="r-nav-links">
+        <a href="#examples">07 examples</a>
+        <a href="#live">live work</a>
+        <a href="mailto:hello@example.com">contact ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="r-wrap index-hero">
+        <div class="index-hero-copy" data-reveal>
+          <p class="r-eyebrow">websites for small businesses / 2026</p>
+          <h1>Сайт должен <em>выглядеть</em> как ваш бизнес.</h1>
+          <p>Не каталог блоков. Семь разных визуальных миров — от бани до детейлинга — чтобы владелец сразу узнал себя.</p>
+          <a class="r-button" href="#examples">смотреть коллекцию ↓</a>
+        </div>
+        <div class="index-orbit" data-tilt aria-hidden="true">
+          <figure class="index-object index-object-a"><img src="assets/salon.jpg" alt=""><span class="r-stamp">01 / salon</span></figure>
+          <figure class="index-object index-object-b"><img src="assets/autoservice.jpg" alt=""><span class="r-stamp">02 / garage</span></figure>
+          <figure class="index-object index-object-c"><img src="assets/tattoo.jpg" alt=""><span class="r-stamp">05 / ink</span></figure>
+          <figure class="index-object index-object-d"><img src="assets/detailing.jpg" alt=""><span class="r-stamp">06 / blik</span></figure>
+        </div>
+      </section>
+
+      <section class="r-wrap index-sheet" id="examples">
+        <div class="index-sheet-head"><span>contact sheet / niche collection</span><span>scroll to inspect</span></div>
+        <div class="index-grid">
+          <a class="index-tile index-tile-wide" href="salon/" data-reveal>
+            <img src="assets/salon.jpg" alt="Интерьер салона красоты">
+            <div class="index-tile-copy"><small>01 / beauty</small><strong>«Лилия»</strong><span>Светлый editorial-сайт с записью и характером.</span></div>
+          </a>
+          <a class="index-tile" href="autoservice/" data-reveal>
+            <img src="assets/autoservice.jpg" alt="Автомобиль в автосервисе">
+            <div class="index-tile-copy"><small>02 / repair</small><strong>«Гараж 77»</strong><span>Терминал вместо лендинга.</span></div>
+          </a>
+          <a class="index-tile" href="spa/" data-reveal>
+            <img src="assets/spa.jpg" alt="Кабинет SPA">
+            <div class="index-tile-copy"><small>03 / body</small><strong>«Тепло»</strong><span>Тишина, ритм и один тёплый акцент.</span></div>
+          </a>
+          <a class="index-tile" href="banya/" data-reveal>
+            <img src="assets/banya.jpg" alt="Парная баня">
+            <div class="index-tile-copy"><small>04 / heat</small><strong>«Пар»</strong><span>Editorial про жар, воду и время.</span></div>
+          </a>
+          <a class="index-tile index-tile-wide" href="tattoo/" data-reveal>
+            <img src="assets/tattoo.jpg" alt="Рабочее место тату-мастера">
+            <div class="index-tile-copy"><small>05 / studio</small><strong>«Чернила»</strong><span>Галерея-скульптура, а не прайс-лист.</span></div>
+          </a>
+          <a class="index-tile" href="detailing/" data-reveal>
+            <img src="assets/detailing.jpg" alt="Автомобиль в детейлинг-центре">
+            <div class="index-tile-copy"><small>06 / finish</small><strong>BLIK</strong><span>До / после как главный экран.</span></div>
+          </a>
+          <a class="index-tile" href="dental/" data-reveal>
+            <img src="assets/dental.jpg" alt="Стоматологический кабинет">
+            <div class="index-tile-copy"><small>07 / trust</small><strong>«Эмаль»</strong><span>Чистая клиника без холодного шаблона.</span></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="r-wrap index-footer" id="live">
+        <span>fictional brands / real visual direction</span>
+        <span>Сайт-пример для объявления на Авито · написать автору ↗</span>
+      </section>
+    </main>
   </div>
-  <div class="real">
-    <h3>Живые проекты (не демо):</h3>
-    <a href="https://samoschet.online" target="_blank">samoschet.online — сервис для самозанятых</a>
-    <a href="https://vaultvision.tech" target="_blank">vaultvision.tech — финансовая аналитика</a>
-  </div>
-  <p class="foot">Все бренды на демо-страницах вымышленные. Хотите такой же сайт для своего бизнеса за 3 дня — напишите мне на Авито.</p>
-</div>
 </body>
 </html>

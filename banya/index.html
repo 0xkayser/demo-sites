@@ -1,105 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Банный дом «Пар» — демо-сайт</title>
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#1d1611;--panel:#261d16;--ink:#f0e6d8;--muted:#a8968139;--mut:#a89681;--amber:#e8a33d;--amber2:#c98826;--line:#3a2d21}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:"PT Sans",sans-serif;line-height:1.6}
-.wrap{max-width:1020px;margin:0 auto;padding:0 24px}
-.demo-badge{position:fixed;top:14px;right:-40px;background:var(--amber);color:#1d1611;font-size:11px;font-weight:700;letter-spacing:.1em;padding:5px 50px;transform:rotate(35deg);z-index:99}
-header{padding:20px 0;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:"Russo One",sans-serif;font-size:24px;letter-spacing:.04em}
-.logo span{color:var(--amber)}
-.phone{color:var(--ink);text-decoration:none;font-weight:700;font-size:17px}
-.phone small{display:block;color:var(--mut);font-weight:400;font-size:11.5px;text-align:right}
-.hero{padding:92px 0;background:linear-gradient(90deg,rgba(29,22,17,.95) 25%,rgba(29,22,17,.5) 70%,rgba(29,22,17,.3)),url(../assets/banya.jpg) center/cover}
-.hero h1{font-family:"Russo One",sans-serif;font-size:clamp(32px,5vw,50px);line-height:1.15;max-width:640px;text-transform:uppercase}
-.hero h1 span{color:var(--amber)}
-.hero p{color:var(--mut);font-size:17px;max-width:520px;margin:20px 0 30px}
-.btn{display:inline-block;background:var(--amber);color:#1d1611;text-decoration:none;font-weight:700;font-size:15px;padding:16px 34px;border-radius:6px;transition:.15s}
-.btn:hover{background:var(--amber2)}
-.facts{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
-.facts b{font-family:"Russo One",sans-serif;font-size:26px;color:var(--amber);display:block}
-.facts span{color:var(--mut);font-size:13.5px}
-.sec{padding:68px 0}
-.sec h2{font-family:"Russo One",sans-serif;font-size:28px;text-transform:uppercase;margin-bottom:30px}
-.sec h2 span{color:var(--amber)}
-.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.room{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.room .ph{aspect-ratio:16/10;background:linear-gradient(150deg,#4a3625,#2b2017);display:flex;align-items:center;justify-content:center;color:#8a715a;font-size:13px}
-.room .in{padding:20px}
-.room h3{font-size:17px;margin-bottom:6px}
-.room p{color:var(--mut);font-size:13.5px;margin-bottom:14px}
-.room .pr{font-family:"Russo One",sans-serif;color:var(--amber);font-size:18px}
-.room .pr small{font-family:"PT Sans",sans-serif;color:var(--mut);font-size:12px;font-weight:400}
-.extra{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.ex{border:1px solid var(--line);border-radius:10px;padding:20px;background:var(--panel)}
-.ex b{display:block;margin-bottom:6px;font-size:15px}
-.ex span{color:var(--mut);font-size:13px}
-.ex .pr{color:var(--amber);font-weight:700;margin-top:10px;display:block}
-.cta{background:linear-gradient(150deg,#33261a,var(--panel));border:1px solid var(--line);border-radius:14px;padding:52px;text-align:center}
-.cta h2{margin-bottom:10px}
-.cta p{color:var(--mut);margin-bottom:26px}
-footer{padding:30px 0;color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:66px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-@media(max-width:820px){.rooms{grid-template-columns:1fr}.extra{grid-template-columns:1fr 1fr}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пар — банный дом</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../redesign.css">
+  <script src="../redesign.js" defer></script>
 </head>
-<body>
-<div class="demo-badge">ДЕМО-МАКЕТ</div>
-<header><div class="wrap">
-  <div class="logo">ПАР<span>.</span></div>
-  <a class="phone" href="#">+7 (900) 000-00-00<small>ежедневно 10:00–02:00</small></a>
-</div></header>
+<body class="rebuild site-banya">
+  <div class="r-page">
+    <header class="r-wrap r-nav">
+      <a class="r-wordmark" href="../">ПАР<span>.</span></a>
+      <nav class="r-nav-links"><a href="#rooms">парные</a><a href="#ritual">ритуал</a><a href="#book">бронь</a></nav>
+      <a class="r-button" href="#book">забронировать ↗</a>
+    </header>
 
-<section class="hero"><div class="wrap">
-  <h1>Настоящая русская баня <span>на дровах</span></h1>
-  <p>Три парные, купель с ледяной водой, веники и парение от банщика с 15-летним стажем. Компании до 12 человек.</p>
-  <a class="btn" href="#zayavka">Забронировать парную</a>
-  <div class="facts">
-    <div><b>3</b><span>парные на дровах</span></div>
-    <div><b>90–110°</b><span>держим жар стабильно</span></div>
-    <div><b>до 12</b><span>человек в компании</span></div>
-    <div><b>4.9 ★</b><span>рейтинг на картах</span></div>
+    <main>
+      <section class="r-wrap banya-hero">
+        <div class="banya-copy" data-reveal>
+          <p class="r-eyebrow">wood / fire / water</p>
+          <h1>Пар начинается <em>раньше</em> огня.</h1>
+          <p>Три парные на дровах, ледяная купель, веники и банщик, который слышит камни. Для двоих или компании до двенадцати.</p>
+          <a class="r-button" href="#book">выбрать парную</a>
+          <div class="banya-facts"><div><strong>3</strong>парные</div><div><strong>90°</strong>стабильный жар</div><div><strong>12</strong>гостей</div></div>
+        </div>
+        <div class="banya-stage" data-reveal>
+          <figure class="banya-stage-photo"><img src="../assets/banya.jpg" alt="Парная банного дома Пар"></figure>
+          <canvas class="banya-canvas" data-steam-canvas aria-hidden="true"></canvas>
+          <div class="banya-live"><small>LIVE / STEAM ROOM</small><b>вода<br>на камни</b><span>смотреть цикл ↓</span></div>
+          <span class="banya-stage-caption">pour / rise / settle</span>
+        </div>
+      </section>
+
+      <section class="r-wrap banya-rooms" id="rooms" data-reveal>
+        <div class="r-section-head"><h2>Три парные.<br><em>Три ритма.</em></h2><p>Цена за час, без скрытых пакетов. Веники, чай и купель — прямо в сценарии отдыха.</p></div>
+        <div class="banya-room-list">
+          <div class="banya-room-row"><small>01</small><strong>Кедр</strong><span>до 6 гостей / самовар / купель</span><b>2 500 ₽/час</b></div>
+          <div class="banya-room-row"><small>02</small><strong>Дуб</strong><span>до 12 гостей / банкетная зона / терраса</span><b>4 000 ₽/час</b></div>
+          <div class="banya-room-row"><small>03</small><strong>Липа</strong><span>для двоих / мягкий пар / первый раз</span><b>1 800 ₽/час</b></div>
+        </div>
+      </section>
+
+      <section class="r-wrap banya-ritual" id="ritual" data-reveal>
+        <h2>Сначала<br>слышно, как <em>льётся вода.</em></h2>
+        <p>Потом камни отвечают жаром, пар садится на дерево, и разговоры становятся тише. Мы собрали сайт вокруг этого момента — не вокруг списка услуг.</p>
+      </section>
+
+      <section class="r-wrap banya-book" id="book" data-reveal><div class="banya-book-inner"><h2>Свободные окна<br>на выходные.</h2><a class="r-button" href="mailto:hello@example.com">написать в WhatsApp ↗</a></div></section>
+    </main>
+    <footer class="r-wrap banya-footer">Банный дом «Пар» — вымышленный бренд, demo / ежедневно 10:00–02:00</footer>
   </div>
-</div></section>
-
-<section class="sec"><div class="wrap">
-  <h2>Парные <span>и цены</span></h2>
-  <div class="rooms">
-    <div class="room"><div class="ph">фото парной «Кедр»</div><div class="in"><h3>«Кедр» — до 6 гостей</h3><p>Кедровая обшивка, комната отдыха с самоваром, купель.</p><div class="pr">2 500 ₽ <small>/час, мин. 2 часа</small></div></div></div>
-    <div class="room"><div class="ph">фото парной «Дуб»</div><div class="in"><h3>«Дуб» — до 12 гостей</h3><p>Большая парная, банкетная зона, караоке, мангал на террасе.</p><div class="pr">4 000 ₽ <small>/час, мин. 3 часа</small></div></div></div>
-    <div class="room"><div class="ph">фото парной «Липа»</div><div class="in"><h3>«Липа» — для двоих</h3><p>Камерная парная с мягким паром, идеальна для первого раза.</p><div class="pr">1 800 ₽ <small>/час, мин. 2 часа</small></div></div></div>
-  </div>
-</div></section>
-
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <h2>Дополнительно</h2>
-  <div class="extra">
-    <div class="ex"><b>Парение с банщиком</b><span>классическое двумя вениками</span><span class="pr">от 1 500 ₽</span></div>
-    <div class="ex"><b>Веники</b><span>дуб, берёза, эвкалипт</span><span class="pr">от 400 ₽</span></div>
-    <div class="ex"><b>Чан с травами</b><span>на террасе, под открытым небом</span><span class="pr">3 000 ₽/час</span></div>
-    <div class="ex"><b>Чай и закуски</b><span>самовар, мёд, сушки — включены</span><span class="pr">0 ₽</span></div>
-  </div>
-</div></section>
-
-<section class="sec" id="zayavka" style="padding-top:0"><div class="wrap">
-  <div class="cta">
-    <h2>Свободные окна <span>на выходные</span></h2>
-    <p>Позвоните или напишите в WhatsApp — скажем свободное время и зафиксируем бронь без предоплаты</p>
-    <a class="btn" href="#">Написать в WhatsApp</a>
-  </div>
-</div></section>
-
-<footer><div class="wrap">
-  <span>Банный дом «Пар» — вымышленный бренд, демо-макет</span>
-  <span>Сайт-пример: одностраничник для бани/сауны</span>
-</div></footer>
 </body>
 </html>

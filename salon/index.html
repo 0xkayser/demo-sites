@@ -1,110 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Салон красоты «Лилия» — демо-сайт</title>
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#faf7f4;--ink:#2b2724;--muted:#8a817a;--gold:#b08d57;--rose:#e8dcd3;--white:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:"Manrope",sans-serif;line-height:1.6;font-weight:300}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-.demo-badge{position:fixed;top:14px;right:-40px;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.1em;padding:5px 50px;transform:rotate(35deg);z-index:99;opacity:.85}
-header{padding:22px 0}
-header .wrap{display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:"Cormorant",serif;font-size:26px;font-weight:600;letter-spacing:.04em}
-.logo span{color:var(--gold)}
-nav a{color:var(--muted);text-decoration:none;font-size:13px;margin-left:26px;letter-spacing:.06em;text-transform:uppercase}
-nav a:hover{color:var(--gold)}
-.hero{padding:70px 0 80px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
-.hero h1{font-family:"Cormorant",serif;font-size:clamp(38px,5vw,58px);font-weight:400;line-height:1.1;margin-bottom:22px}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero p{color:var(--muted);font-size:16.5px;max-width:430px;margin-bottom:32px}
-.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:16px 36px;transition:.2s}
-.btn:hover{background:var(--gold)}
-.hero-visual{aspect-ratio:4/5;background:url(../assets/salon.jpg) center/cover;position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-.hero-visual::before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.55)}
-.hero-visual span{font-family:"Cormorant",serif;font-style:italic;font-size:20px;color:#fff;padding-bottom:34px;position:relative}
-.strip{background:var(--white);padding:18px 0;border-top:1px solid var(--rose);border-bottom:1px solid var(--rose)}
-.strip .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:13px;letter-spacing:.05em}
-.sec{padding:78px 0}
-.sec h2{font-family:"Cormorant",serif;font-size:36px;font-weight:400;text-align:center;margin-bottom:8px}
-.sec .sub{text-align:center;color:var(--muted);font-size:14.5px;margin-bottom:48px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rose)}
-.srv{background:var(--white);padding:34px 28px}
-.srv .num{font-family:"Cormorant",serif;font-style:italic;color:var(--gold);font-size:20px;margin-bottom:12px}
-.srv h3{font-family:"Cormorant",serif;font-size:22px;font-weight:600;margin-bottom:8px}
-.srv p{color:var(--muted);font-size:14px;margin-bottom:14px}
-.srv .price{font-size:14px;letter-spacing:.04em}
-.masters{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.master{text-align:center}
-.master .ph{aspect-ratio:3/4;background:linear-gradient(170deg,#e7ddd4,#cbb8a6);margin-bottom:16px;filter:saturate(.9)}
-.master h3{font-family:"Cormorant",serif;font-size:21px;font-weight:600}
-.master p{color:var(--muted);font-size:13.5px}
-.cta-sec{background:var(--ink);color:#fff;text-align:center;padding:84px 0}
-.cta-sec h2{font-family:"Cormorant",serif;font-size:38px;font-weight:400;margin-bottom:14px}
-.cta-sec p{color:#b8afa8;margin-bottom:32px;font-size:15px}
-.cta-sec .btn{background:var(--gold)}
-.cta-sec .btn:hover{background:#fff;color:var(--ink)}
-footer{padding:34px 0;color:var(--muted);font-size:13px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding:40px 0}.services,.masters{grid-template-columns:1fr}nav{display:none}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лилия — салон красоты</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../redesign.css">
+  <script src="../redesign.js" defer></script>
 </head>
-<body>
-<div class="demo-badge">ДЕМО-МАКЕТ</div>
-<header><div class="wrap">
-  <div class="logo">Лилия<span>.</span></div>
-  <nav><a href="#services">Услуги</a><a href="#masters">Мастера</a><a href="#contact">Запись</a></nav>
-</div></header>
+<body class="rebuild site-salon">
+  <div class="r-page">
+    <header class="r-wrap r-nav">
+      <a class="r-wordmark" href="../">Лилия<em>.</em></a>
+      <nav class="r-nav-links"><a href="#services">услуги</a><a href="#about">о салоне</a><a href="#book">запись</a></nav>
+      <a class="r-button" href="#book">записаться</a>
+    </header>
 
-<section class="hero"><div class="wrap" style="display:contents">
-  <div>
-    <h1>Красота — это <em>ритуал</em>, а не процедура</h1>
-    <p>Салон в центре города: колористика, уход, ногтевой сервис. Работаем на премиальных материалах, записываем без ожидания.</p>
-    <a class="btn" href="#contact">Записаться онлайн</a>
+    <main>
+      <section class="r-wrap salon-hero">
+        <div class="salon-copy" data-reveal>
+          <p class="r-eyebrow">beauty room / since 2012</p>
+          <h1>Красота — это <em>ритуал,</em> а не процедура.</h1>
+          <p>Колористика, уход и ногтевой сервис на премиальных материалах. Запишем на этой неделе — без ожидания в листе.</p>
+          <div class="salon-links"><a class="r-button" href="#book">выбрать время</a><a class="text-link" href="#services">смотреть услуги ↘</a></div>
+        </div>
+        <div class="salon-visual" data-tilt data-reveal>
+          <figure class="salon-visual-main"><img src="../assets/salon.jpg" alt="Интерьер салона Лилия"></figure>
+          <div class="salon-visual-note"><small>next available</small><strong>ср<br>18:30</strong><span>колорист / уход / маникюр</span></div>
+          <div class="salon-visual-tag">light room / 01</div>
+        </div>
+      </section>
+
+      <section class="r-wrap salon-manifesto" id="about" data-reveal>
+        <p class="r-eyebrow">our point of view</p>
+        <h2>В зеркале должна оставаться <em>вы,</em> а не работа мастера.</h2>
+      </section>
+
+      <section class="r-wrap salon-services" id="services" data-reveal>
+        <div class="r-section-head"><h2>Услуги<br><em style="color:#bd5d41">без лишнего</em></h2><p>Подбираем не «пакет», а ритуал под задачу: освежить, восстановить, собрать образ.</p></div>
+        <div class="salon-service-list">
+          <div class="salon-service-row"><small>01</small><strong>Окрашивание</strong><span>сложные техники, уход после</span><b>от 6 500 ₽</b></div>
+          <div class="salon-service-row"><small>02</small><strong>Укладка и образ</strong><span>на событие или просто так</span><b>от 2 200 ₽</b></div>
+          <div class="salon-service-row"><small>03</small><strong>Маникюр</strong><span>чистая форма, спокойный цвет</span><b>от 1 900 ₽</b></div>
+          <div class="salon-service-row"><small>04</small><strong>Уход за волосами</strong><span>диагностика + восстановление</span><b>от 3 500 ₽</b></div>
+        </div>
+      </section>
+
+      <section class="r-wrap salon-book" id="book" data-reveal>
+        <div><h2>Оставьте<br>себе час.</h2></div>
+        <div><p>Напишите, что хочется изменить, — администратор предложит два окна и мастера под задачу.</p><a class="r-button" href="mailto:hello@example.com">написать в Telegram ↗</a></div>
+      </section>
+    </main>
+    <footer class="r-wrap salon-footer">Салон «Лилия» — вымышленный бренд, demo / ул. Примерная, 8</footer>
   </div>
-  <div class="hero-visual"></div>
-</div></section>
-
-<div class="strip"><div class="wrap">
-  <span>Ежедневно 10:00–21:00</span><span>ул. Садовая, 12</span><span>+7 (900) 000-00-00</span><span>Парковка для гостей</span>
-</div></div>
-
-<section class="sec" id="services"><div class="wrap">
-  <h2>Услуги</h2>
-  <p class="sub">Цены фиксированные — без «от» и сюрпризов на кассе</p>
-  <div class="services">
-    <div class="srv"><div class="num">01</div><h3>Стрижка и укладка</h3><p>Диагностика, мытьё, стрижка, укладка — всё включено в цену.</p><div class="price">от 2 500 ₽</div></div>
-    <div class="srv"><div class="num">02</div><h3>Колористика</h3><p>Сложные окрашивания: AirTouch, шатуш, тотал-блонд. Составы Davines.</p><div class="price">от 7 000 ₽</div></div>
-    <div class="srv"><div class="num">03</div><h3>Ногтевой сервис</h3><p>Маникюр и педикюр в четыре руки, покрытие держится 3+ недели.</p><div class="price">от 2 200 ₽</div></div>
-    <div class="srv"><div class="num">04</div><h3>Уход за лицом</h3><p>Чистки, пилинги, уходовые программы на профессиональной косметике.</p><div class="price">от 3 500 ₽</div></div>
-    <div class="srv"><div class="num">05</div><h3>Брови и ресницы</h3><p>Архитектура бровей, ламинирование, окрашивание.</p><div class="price">от 1 500 ₽</div></div>
-    <div class="srv"><div class="num">06</div><h3>Свадебный образ</h3><p>Причёска + макияж с репетицией. Выезд на локацию.</p><div class="price">от 12 000 ₽</div></div>
-  </div>
-</div></section>
-
-<section class="sec" id="masters" style="padding-top:0"><div class="wrap">
-  <h2>Мастера</h2>
-  <p class="sub">Команда с опытом от 7 лет и дипломами международных школ</p>
-  <div class="masters">
-    <div class="master"><div class="ph"></div><h3>Анна</h3><p>Топ-стилист, колорист</p></div>
-    <div class="master"><div class="ph"></div><h3>Мария</h3><p>Ногтевой сервис</p></div>
-    <div class="master"><div class="ph"></div><h3>Виктория</h3><p>Косметолог-эстетист</p></div>
-  </div>
-</div></section>
-
-<section class="cta-sec" id="contact"><div class="wrap">
-  <h2>Запишитесь на удобное время</h2>
-  <p>Ответим в мессенджере в течение 10 минут и подберём окно у нужного мастера</p>
-  <a class="btn" href="#">Написать в WhatsApp</a>
-</div></section>
-
-<footer><div class="wrap">
-  <span>Салон красоты «Лилия» — вымышленный бренд, демо-макет</span>
-  <span>Сайт-пример: одностраничник для салона красоты</span>
-</div></footer>
 </body>
 </html>
