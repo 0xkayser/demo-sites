@@ -1,115 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Автосервис «Гараж 77» — демо-сайт</title>
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#121417;--panel:#1a1d22;--ink:#f2f3f5;--muted:#8b929c;--line:#2a2f37;--orange:#ff6b1a;--orange2:#e05a0f}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:"Inter",sans-serif;line-height:1.6}
-.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
-.demo-badge{position:fixed;top:14px;right:-40px;background:var(--orange);color:#fff;font-size:11px;letter-spacing:.1em;padding:5px 50px;transform:rotate(35deg);z-index:99}
-header{padding:18px 0;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:"Oswald",sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:.05em}
-.logo span{color:var(--orange)}
-.phone{font-weight:700;color:var(--ink);text-decoration:none;font-size:17px}
-.phone small{display:block;font-weight:400;color:var(--muted);font-size:11.5px;text-align:right}
-.hero{padding:90px 0;background:linear-gradient(90deg,rgba(10,12,15,.96) 25%,rgba(10,12,15,.55) 70%,rgba(10,12,15,.35)),url(../assets/autoservice.jpg) center/cover}
-.hero h1{font-family:"Oswald",sans-serif;font-size:clamp(34px,5vw,54px);text-transform:uppercase;line-height:1.12;max-width:700px}
-.hero h1 span{color:var(--orange)}
-.hero p{color:var(--muted);font-size:17px;max-width:520px;margin:20px 0 30px}
-.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:16px 34px;border-radius:4px;transition:.15s;text-transform:uppercase;letter-spacing:.03em}
-.btn:hover{background:var(--orange2)}
-.btn.ghost{background:transparent;border:1px solid var(--line);margin-left:12px;color:var(--ink);text-transform:none;letter-spacing:0;font-weight:500}
-.trust{display:flex;gap:38px;margin-top:44px;flex-wrap:wrap}
-.trust b{font-family:"Oswald",sans-serif;font-size:30px;color:var(--orange);display:block}
-.trust span{color:var(--muted);font-size:13.5px}
-.sec{padding:70px 0}
-.sec h2{font-family:"Oswald",sans-serif;font-size:32px;text-transform:uppercase;margin-bottom:34px}
-.sec h2 i{color:var(--orange);font-style:normal}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px}
-.card h3{font-size:16.5px;margin-bottom:6px}
-.card p{color:var(--muted);font-size:13.5px;margin-bottom:14px}
-.card .pr{font-family:"Oswald",sans-serif;color:var(--orange);font-size:19px}
-.why{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.why div{border-left:3px solid var(--orange);padding:4px 0 4px 16px}
-.why b{display:block;margin-bottom:4px;font-size:15px}
-.why span{color:var(--muted);font-size:13px}
-.form-sec{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.form-sec .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding-top:60px;padding-bottom:60px}
-.form-sec h2{margin-bottom:12px}
-.form-sec p{color:var(--muted);font-size:15px}
-.form{display:grid;gap:12px}
-.form input{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:15px 16px;color:var(--ink);font-size:15px;font-family:inherit}
-.form input:focus{outline:none;border-color:var(--orange)}
-footer{padding:30px 0;color:var(--muted);font-size:13px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-@media(max-width:820px){.grid,.why{grid-template-columns:1fr}.form-sec .wrap{grid-template-columns:1fr}.btn.ghost{margin-left:0;margin-top:10px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гараж 77 — автосервис</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../redesign.css">
+  <script src="../redesign.js" defer></script>
 </head>
-<body>
-<div class="demo-badge">ДЕМО-МАКЕТ</div>
-<header><div class="wrap">
-  <div class="logo">Гараж <span>77</span></div>
-  <a class="phone" href="#">+7 (900) 000-00-00<small>Пн–Сб 9:00–20:00 · без записи</small></a>
-</div></header>
+<body class="rebuild site-garage">
+  <div class="r-page">
+    <header class="r-wrap r-nav">
+      <a class="r-wordmark" href="../">GARAGE <b>77</b></a>
+      <nav class="r-nav-links"><a href="#services">services</a><a href="#proof">how it works</a><a href="#book">book bay</a></nav>
+      <a class="r-button" href="#book">open a ticket ↗</a>
+    </header>
 
-<section class="hero"><div class="wrap">
-  <h1>Ремонт авто <span>с гарантией до 2 лет</span> и честной сметой</h1>
-  <p>Диагностика при вас, смета до начала работ, фотоотчёт каждой операции. Если найдём «лишние» работы у других — покажем и объясним.</p>
-  <a class="btn" href="#zapis">Записаться на диагностику</a>
-  <a class="btn ghost" href="#prices">Смотреть цены</a>
-  <div class="trust">
-    <div><b>12 лет</b><span>работаем в городе</span></div>
-    <div><b>4.9 ★</b><span>рейтинг на картах</span></div>
-    <div><b>0 ₽</b><span>диагностика при ремонте</span></div>
-    <div><b>2 года</b><span>гарантия на работы</span></div>
+    <main>
+      <section class="r-wrap garage-hero">
+        <div class="garage-copy" data-reveal>
+          <p class="r-eyebrow">repair terminal / moscow</p>
+          <h1>Ремонт<br>без <span>шума.</span></h1>
+          <p>Диагностика при вас, цена до начала работ, фото каждой операции. Оставляем только то, что действительно нужно автомобилю.</p>
+          <a class="r-button" href="#book">запросить диагностику</a>
+          <div class="garage-hero-meta"><div><strong>12</strong>лет в деле</div><div><strong>4.9</strong>рейтинг</div><div><strong>2 yr</strong>гарантия</div></div>
+        </div>
+        <div class="garage-bay" data-tilt data-reveal>
+          <img src="../assets/autoservice.jpg" alt="Автомобиль на подъёмнике в Гараже 77">
+          <div class="garage-console"><div class="console-top"><span>bay_02 / live</span><span>12:44</span></div><strong>READY</strong><div class="console-bar"><i></i></div><div class="console-foot"><span>scan</span><span>lift</span><span>release</span></div></div>
+        </div>
+      </section>
+
+      <section class="r-wrap garage-services" id="services" data-reveal>
+        <p class="r-eyebrow" style="color:#ff5c1a">01 / service table</p>
+        <h2>что чиним<br>и сколько.</h2>
+        <div class="garage-table">
+          <a class="garage-row" href="#book"><small>01</small><strong>Диагностика ходовой</strong><span>подъёмник / дефектовка / фото</span><b>от 800 ₽</b></a>
+          <a class="garage-row" href="#book"><small>02</small><strong>Тормозная система</strong><span>колодки / диски / суппорты</span><b>от 1 500 ₽</b></a>
+          <a class="garage-row" href="#book"><small>03</small><strong>Масло и фильтры</strong><span>30 минут / при вас</span><b>от 900 ₽</b></a>
+          <a class="garage-row" href="#book"><small>04</small><strong>Ремонт двигателя</strong><span>от ремня ГРМ до капитального</span><b>от 4 000 ₽</b></a>
+          <a class="garage-row" href="#book"><small>05</small><strong>Кондиционер</strong><span>утечки / заправка / чистка</span><b>от 2 500 ₽</b></a>
+        </div>
+      </section>
+
+      <section class="r-wrap garage-proof" id="proof" data-reveal>
+        <h2>не верьте<br>на слово.</h2>
+        <div><p>Покажем старую деталь, объясним, что будет, если не менять, и зафиксируем смету до того, как автомобиль поднимется на подъёмник.</p><p>Можно ждать в зоне с кофе и Wi‑Fi или смотреть ремонт через стекло.</p></div>
+      </section>
+
+      <section class="r-wrap garage-proof" id="book" data-reveal>
+        <h2>открыть<br><span style="color:#ff5c1a">тикет.</span></h2>
+        <form class="garage-form" onsubmit="return false"><input placeholder="марка и модель"><input placeholder="что случилось"><input placeholder="телефон" type="tel"><button class="r-button" type="submit">жду звонка в течение 15 минут ↗</button></form>
+      </section>
+    </main>
+    <footer class="r-wrap garage-footer">Автосервис «Гараж 77» — вымышленный бренд, demo / Пн–Сб 9:00–20:00</footer>
   </div>
-</div></section>
-
-<section class="sec" id="prices"><div class="wrap">
-  <h2>Популярные работы <i>и цены</i></h2>
-  <div class="grid">
-    <div class="card"><h3>Замена масла и фильтров</h3><p>Масло в наличии или ваше. 30 минут, при вас.</p><div class="pr">от 900 ₽</div></div>
-    <div class="card"><h3>Диагностика ходовой</h3><p>Подъёмник, полный осмотр, дефектовка с фото.</p><div class="pr">от 800 ₽</div></div>
-    <div class="card"><h3>Тормозная система</h3><p>Колодки, диски, суппорты. Запчасти — оригинал или проверенные аналоги.</p><div class="pr">от 1 500 ₽</div></div>
-    <div class="card"><h3>Ремонт двигателя</h3><p>От замены ремня ГРМ до капитального ремонта.</p><div class="pr">от 4 000 ₽</div></div>
-    <div class="card"><h3>Кондиционер</h3><p>Заправка, диагностика утечек, антибактериальная обработка.</p><div class="pr">от 2 500 ₽</div></div>
-    <div class="card"><h3>Компьютерная диагностика</h3><p>Дилерские сканеры, расшифровка ошибок с объяснением.</p><div class="pr">от 1 200 ₽</div></div>
-  </div>
-</div></section>
-
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <h2>Почему <i>нам доверяют</i></h2>
-  <div class="why">
-    <div><b>Смета до работ</b><span>Цена фиксируется до начала — доплат «по факту» не бывает</span></div>
-    <div><b>Фотоотчёт</b><span>Каждая замена — с фото старой и новой детали</span></div>
-    <div><b>Запчасти в наличии</b><span>Свой склад расходников — не ждёте доставку неделями</span></div>
-    <div><b>Зона ожидания</b><span>Кофе, Wi-Fi, ремонт при вас за стеклом</span></div>
-  </div>
-</div></section>
-
-<section class="form-sec" id="zapis"><div class="wrap">
-  <div>
-    <h2>Запишитесь <i>за 30 секунд</i></h2>
-    <p>Оставьте номер — перезвоним в течение 15 минут, назовём цену и подберём время. Или просто приезжайте: работаем и без записи.</p>
-  </div>
-  <form class="form" onsubmit="return false">
-    <input placeholder="Марка и модель авто">
-    <input placeholder="Что случилось (коротко)">
-    <input placeholder="Телефон" type="tel">
-    <button class="btn" type="submit" style="border:0;cursor:pointer;font-family:inherit">Жду звонка</button>
-  </form>
-</div></section>
-
-<footer><div class="wrap">
-  <span>Автосервис «Гараж 77» — вымышленный бренд, демо-макет</span>
-  <span>Сайт-пример: одностраничник для автосервиса</span>
-</div></footer>
 </body>
 </html>

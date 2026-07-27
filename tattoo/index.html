@@ -1,109 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Тату-студия «Чернила» — демо-сайт</title>
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0c0c0c;--ink:#f4f4f2;--muted:#8d8d88;--acid:#d8ff3e;--line:#242423;--panel:#141413}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:"Inter",sans-serif;line-height:1.6}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-.demo-badge{position:fixed;top:14px;right:-40px;background:var(--acid);color:#0c0c0c;font-size:11px;font-weight:700;letter-spacing:.1em;padding:5px 50px;transform:rotate(35deg);z-index:99}
-header{padding:20px 0;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:"Unbounded",sans-serif;font-size:19px;font-weight:700;letter-spacing:.02em}
-.logo span{color:var(--acid)}
-nav a{color:var(--muted);text-decoration:none;font-size:13.5px;margin-left:22px}
-nav a:hover{color:var(--acid)}
-.hero{padding:96px 0 84px;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(12,12,12,.94) 30%,rgba(12,12,12,.6) 70%,rgba(12,12,12,.4)),url(../assets/tattoo.jpg) center/cover}
-.hero h1{font-family:"Unbounded",sans-serif;font-size:clamp(30px,5.4vw,54px);font-weight:700;line-height:1.08;text-transform:uppercase;max-width:760px}
-.hero h1 em{font-style:normal;color:var(--acid)}
-.hero p{color:var(--muted);font-size:16.5px;max-width:480px;margin:22px 0 32px}
-.btn{display:inline-block;background:var(--acid);color:#0c0c0c;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:16px 32px;transition:.15s}
-.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 #fff}
-.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;overflow:hidden;white-space:nowrap;color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
-.sec{padding:70px 0}
-.sec h2{font-family:"Unbounded",sans-serif;font-size:26px;text-transform:uppercase;margin-bottom:32px}
-.sec h2 span{color:var(--acid)}
-.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
-.st{background:var(--panel);padding:26px;transition:.15s}
-.st:hover{background:#1b1b1a}
-.st .n{font-family:"Unbounded",sans-serif;color:var(--acid);font-size:13px;margin-bottom:10px}
-.st h3{font-size:16px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.03em}
-.st p{color:var(--muted);font-size:13.5px}
-.works{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.w{aspect-ratio:1;background:linear-gradient(160deg,#222,#161616);display:flex;align-items:center;justify-content:center;color:#555;font-size:12px;border:1px solid var(--line)}
-.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);gap:14px}
-.price-row .nm{font-size:15.5px}
-.price-row .nm small{color:var(--muted);display:block;font-size:12.5px}
-.price-row b{font-family:"Unbounded",sans-serif;font-size:16px;color:var(--acid);white-space:nowrap}
-.note{color:var(--muted);font-size:13px;margin-top:16px}
-.cta{border:1px solid var(--acid);padding:48px;text-align:center;margin-bottom:70px}
-.cta h2{margin-bottom:8px}
-.cta p{color:var(--muted);margin-bottom:26px;font-size:15px}
-footer{padding:28px 0;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-@media(max-width:800px){.styles{grid-template-columns:1fr}.works{grid-template-columns:1fr 1fr}nav{display:none}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чернила — авторская татуировка</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../redesign.css">
+  <script src="../redesign.js" defer></script>
 </head>
-<body>
-<div class="demo-badge">ДЕМО-МАКЕТ</div>
-<header><div class="wrap">
-  <div class="logo">ЧЕРНИЛА<span>*</span></div>
-  <nav><a href="#styles">Стили</a><a href="#works">Работы</a><a href="#price">Цены</a><a href="#zapis">Запись</a></nav>
-</div></header>
+<body class="rebuild site-tattoo">
+  <div class="r-page">
+    <header class="r-wrap r-nav">
+      <a class="r-wordmark" href="../">ЧЕРНИЛА<span>*</span></a>
+      <nav class="r-nav-links"><a href="#styles">style index</a><a href="#works">works</a><a href="#book">idea drop</a></nav>
+      <a class="r-button" href="#book">обсудить эскиз ↗</a>
+    </header>
 
-<section class="hero"><div class="wrap">
-  <h1>Тату, которое не стыдно <em>показать мастеру</em> через 10 лет</h1>
-  <p>Студия авторской татуировки: графика, реализм, олдскул. Разработка эскиза под вас, стерильность операционного уровня.</p>
-  <a class="btn" href="#zapis">Обсудить эскиз — бесплатно</a>
-</div></section>
+    <main>
+      <section class="r-wrap tattoo-hero">
+        <div class="tattoo-copy" data-reveal>
+          <p class="r-eyebrow">ink studio / original work</p>
+          <h1>Не тату.<br><span>Артефакт.</span></h1>
+          <p>Графика, реализм, олдскул и большие идеи. Разрабатываем эскиз как объект, который должен пережить настроение дня.</p>
+          <a class="r-button" href="#book">принести идею</a>
+        </div>
+        <div class="tattoo-stage" data-tilt data-reveal>
+          <div class="tattoo-sculpture">
+            <figure class="tattoo-panel tattoo-panel-a"><img src="../assets/tattoo.jpg" alt="Рабочее место тату-мастера"><span>01 / process</span></figure>
+            <figure class="tattoo-panel tattoo-panel-b"><img src="../assets/tattoo.jpg" alt="Чернила и эскиз"><span>02 / pigment</span></figure>
+            <figure class="tattoo-panel tattoo-panel-c"><img src="../assets/tattoo.jpg" alt="Детали студии Чернила"><span>03 / mark</span></figure>
+          </div>
+          <canvas class="tattoo-ink-canvas" data-ink-canvas aria-hidden="true"></canvas>
+          <span class="tattoo-index">needle / pulse / line</span>
+        </div>
+      </section>
 
-<div class="marq">эскиз под вас · одноразовые расходники · пигменты с сертификацией EU · исправляем чужие работы · заживление под плёнкой ·  эскиз под вас · одноразовые расходники</div>
+      <section class="r-wrap tattoo-ledger" id="styles" data-reveal>
+        <div class="r-section-head"><h2>Style<br><span>index.</span></h2><p>Выбирайте не из каталога картинок, а из языка, которым мастер будет думать вместе с вами.</p></div>
+        <div class="tattoo-list">
+          <div class="tattoo-row"><small>01</small><strong>Графика / linework</strong><span>тонкая линия, дотворк, геометрия</span><b>от 5 000 ₽</b></div>
+          <div class="tattoo-row"><small>02</small><strong>Blackwork</strong><span>плотный чёрный, ритм, контраст</span><b>от 8 000 ₽</b></div>
+          <div class="tattoo-row"><small>03</small><strong>Realism</strong><span>портреты, тени, мягкий переход</span><b>от 12 000 ₽</b></div>
+          <div class="tattoo-row"><small>04</small><strong>Cover-up</strong><span>перекрытие и реставрация старого</span><b>от 15 000 ₽</b></div>
+        </div>
+      </section>
 
-<section class="sec" id="styles"><div class="wrap">
-  <h2>Стили <span>студии</span></h2>
-  <div class="styles">
-    <div class="st"><div class="n">01</div><h3>Графика / Лайнворк</h3><p>Тонкие линии, дотворк, геометрия. Конёк студии.</p></div>
-    <div class="st"><div class="n">02</div><h3>Реализм</h3><p>Портреты и ч/б реализм с плавными переходами.</p></div>
-    <div class="st"><div class="n">03</div><h3>Олдскул / Неотрад</h3><p>Плотный цвет, чёткий контур, классика жанра.</p></div>
-    <div class="st"><div class="n">04</div><h3>Леттеринг</h3><p>Каллиграфия и шрифтовые композиции.</p></div>
-    <div class="st"><div class="n">05</div><h3>Кавер-ап</h3><p>Перекрытие и реставрация старых татуировок.</p></div>
-    <div class="st"><div class="n">06</div><h3>Мини-тату</h3><p>Аккуратные малые формы за один короткий сеанс.</p></div>
+      <section class="r-wrap tattoo-strip" id="works" data-reveal><span>one-time supplies</span><span>certified pigments</span><span>healing support</span><span>no copy / only yours</span></section>
+
+      <section class="r-wrap tattoo-book" id="book" data-reveal><h2>Присылай<br>идею.</h2><a class="r-button" href="mailto:hello@example.com">открыть Telegram ↗</a></section>
+    </main>
+    <footer class="r-wrap tattoo-footer">Тату-студия «Чернила» — вымышленный бренд, demo / запись по эскизу</footer>
   </div>
-</div></section>
-
-<section class="sec" id="works" style="padding-top:0"><div class="wrap">
-  <h2>Работы</h2>
-  <div class="works">
-    <div class="w">фото работы</div><div class="w">фото работы</div><div class="w">фото работы</div><div class="w">фото работы</div>
-    <div class="w">фото работы</div><div class="w">фото работы</div><div class="w">фото работы</div><div class="w">фото работы</div>
-  </div>
-</div></section>
-
-<section class="sec" id="price" style="padding-top:0"><div class="wrap">
-  <h2>Цены <span>честно</span></h2>
-  <div class="price-row"><div class="nm">Мини-тату до 7 см<small>1 короткий сеанс</small></div><b>от 5 000 ₽</b></div>
-  <div class="price-row"><div class="nm">Сеанс до 3 часов<small>средние работы</small></div><b>от 12 000 ₽</b></div>
-  <div class="price-row"><div class="nm">Полный день<small>крупные проекты, рукава</small></div><b>от 25 000 ₽</b></div>
-  <div class="price-row"><div class="nm">Разработка эскиза<small>при записи на сеанс</small></div><b>0 ₽</b></div>
-  <div class="note">Точная цена — после обсуждения эскиза: зависит от размера, детализации и места. Фикс до сеанса, без сюрпризов.</div>
-</div></section>
-
-<section class="wrap" id="zapis">
-  <div class="cta">
-    <h2>Присылай <span>идею</span></h2>
-    <p>Референсы, место, размер — мастер ответит в течение пары часов, посчитает цену и предложит даты</p>
-    <a class="btn" href="#">Написать в Telegram</a>
-  </div>
-</section>
-
-<footer><div class="wrap">
-  <span>Тату-студия «Чернила» — вымышленный бренд, демо-макет</span>
-  <span>Сайт-пример: одностраничник для тату-студии</span>
-</div></footer>
 </body>
 </html>
