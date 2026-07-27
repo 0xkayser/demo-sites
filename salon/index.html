@@ -24,7 +24,7 @@ nav a:hover{color:var(--gold)}
 .hero p{color:var(--muted);font-size:16.5px;max-width:430px;margin-bottom:32px}
 .btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:16px 36px;transition:.2s}
 .btn:hover{background:var(--gold)}
-.hero-visual{aspect-ratio:4/5;background:linear-gradient(160deg,var(--rose),#d9c6b8 60%,var(--gold));position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.hero-visual{aspect-ratio:4/5;background:url(../assets/salon.jpg) center/cover;position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
 .hero-visual::before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.55)}
 .hero-visual span{font-family:"Cormorant",serif;font-style:italic;font-size:20px;color:#fff;padding-bottom:34px;position:relative}
 .strip{background:var(--white);padding:18px 0;border-top:1px solid var(--rose);border-bottom:1px solid var(--rose)}
@@ -40,7 +40,7 @@ nav a:hover{color:var(--gold)}
 .srv .price{font-size:14px;letter-spacing:.04em}
 .masters{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .master{text-align:center}
-.master .ph{aspect-ratio:3/4;background:linear-gradient(170deg,#e7ddd4,#cbb8a6);margin-bottom:16px}
+.master .ph{aspect-ratio:3/4;background:linear-gradient(170deg,#e7ddd4,#cbb8a6);margin-bottom:16px;filter:saturate(.9)}
 .master h3{font-family:"Cormorant",serif;font-size:21px;font-weight:600}
 .master p{color:var(--muted);font-size:13.5px}
 .cta-sec{background:var(--ink);color:#fff;text-align:center;padding:84px 0}
@@ -66,7 +66,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     <p>Салон в центре города: колористика, уход, ногтевой сервис. Работаем на премиальных материалах, записываем без ожидания.</p>
     <a class="btn" href="#contact">Записаться онлайн</a>
   </div>
-  <div class="hero-visual"><span>фото интерьера салона</span></div>
+  <div class="hero-visual"></div>
 </div></section>
 
 <div class="strip"><div class="wrap">
