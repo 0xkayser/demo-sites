@@ -28,9 +28,18 @@
           <a class="r-button" href="#book">запросить диагностику</a>
           <div class="garage-hero-meta"><div><strong>12</strong>лет в деле</div><div><strong>4.9</strong>рейтинг</div><div><strong>2 yr</strong>гарантия</div></div>
         </div>
-        <div class="garage-bay" data-tilt data-reveal>
-          <img src="../assets/autoservice.jpg" alt="Автомобиль на подъёмнике в Гараже 77">
-          <div class="garage-console"><div class="console-top"><span>bay_02 / live</span><span>12:44</span></div><strong>READY</strong><div class="console-bar"><i></i></div><div class="console-foot"><span>scan</span><span>lift</span><span>release</span></div></div>
+        <div class="garage-bay" data-garage-lift tabindex="0" role="button" aria-label="Перезапустить подъём автомобиля" data-reveal>
+          <div class="garage-lift-scene">
+            <div class="garage-grid"></div>
+            <div class="garage-column garage-column-left"></div><div class="garage-column garage-column-right"></div>
+            <div class="garage-lift-platform">
+              <div class="garage-car-2d"><i class="garage-wheel garage-wheel-left"></i><i class="garage-wheel garage-wheel-right"></i></div>
+              <span class="garage-platform-line"></span>
+            </div>
+            <div class="garage-piston"><i></i></div>
+            <div class="garage-lift-readout"><span>HYDRAULIC LIFT</span><b data-lift-status>LOWERED</b><small>cycle / 01 ↕</small></div>
+          </div>
+          <div class="garage-console"><div class="console-top"><span>bay_02 / live</span><span>12:44</span></div><strong>LIFT<br><em>UP / DOWN</em></strong><div class="console-bar"><i></i></div><div class="console-foot"><span>drive</span><span>lift</span><span>release</span></div><button type="button" data-garage-replay>replay ↻</button></div>
         </div>
       </section>
 

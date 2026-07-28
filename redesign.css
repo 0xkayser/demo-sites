@@ -475,3 +475,153 @@ body.site-dental { background: #e9f1ef; color: #132724; font-family: "Inter", Ar
 @media (prefers-reduced-motion: reduce) {
   body.rebuild *, body.rebuild *::before, body.rebuild *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
 }
+
+/* V4 hero scenes — obvious 2D actions instead of decorative photo overlays */
+
+/* Banya: ladle → water → stones → steam */
+.banya-stage[data-banya-stage] { min-height: 590px; }
+.banya-drawing { position: absolute; inset: 0 8% 0 0; overflow: hidden; border: 2px solid #1c1714; background: #442319; transform: rotate(3deg); box-shadow: 14px 16px 0 rgba(186,100,58,.24); }
+.banya-art { display: block; width: 100%; height: 100%; }
+.banya-planks path { fill: none; stroke: #f0b58a; stroke-width: 3; }
+.banya-ladle, .banya-water, .banya-steam, .banya-sparks { transform-box: fill-box; transform-origin: center; }
+.banya-water { stroke-dasharray: 90; stroke-dashoffset: 90; opacity: 0; }
+.banya-steam path { stroke-dasharray: 280; stroke-dashoffset: 280; opacity: 0; }
+.banya-drawing-label { position: absolute; left: 18px; bottom: 16px; color: #f8e6d1; font: 10px/1 "DM Mono", monospace; letter-spacing: .12em; }
+.banya-live { z-index: 5; }
+.banya-live button, .salon-visual-note button, .dental-slip button { display: block; margin-top: 18px; padding: 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: inherit; font: 10px "DM Mono", monospace; cursor: pointer; }
+.banya-stage.is-running .banya-ladle { animation: banyaLadleV4 3.8s cubic-bezier(.45,.05,.55,.95) infinite; }
+.banya-stage.is-running .banya-water { animation: banyaWaterV4 3.8s ease-in-out infinite; }
+.banya-stage.is-running .banya-steam path:nth-child(1) { animation: banyaSteamV4 3.8s ease-out .58s infinite; }
+.banya-stage.is-running .banya-steam path:nth-child(2) { animation: banyaSteamV4 3.8s ease-out .78s infinite; }
+.banya-stage.is-running .banya-steam path:nth-child(3) { animation: banyaSteamV4 3.8s ease-out .98s infinite; }
+.banya-stage.is-running .banya-sparks { animation: banyaSparksV4 3.8s ease-out infinite; transform-origin: 50% 70%; }
+
+/* Garage: a readable hydraulic lift cycle */
+.garage-bay[data-garage-lift] { overflow: hidden; min-height: 550px; border-color: rgba(242,240,236,.4); background: #11151a; transform: rotate(-2deg); }
+.garage-bay[data-garage-lift]::before, .garage-bay[data-garage-lift]::after { content: none; }
+.garage-lift-scene { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(180deg, #090b0e 0 35%, #171b21 36% 100%); }
+.garage-grid { position: absolute; inset: 35% 0 0; opacity: .55; background: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px); background-size: 46px 34px; transform: perspective(260px) rotateX(52deg) scale(1.25); transform-origin: bottom; }
+.garage-column { position: absolute; top: 16%; bottom: 16%; width: 16px; border: 2px solid #ff5c1a; background: linear-gradient(90deg, #252b32, #606974 48%, #1a1f25); box-shadow: 0 0 22px rgba(255,92,26,.18); }
+.garage-column-left { left: 11%; }.garage-column-right { right: 11%; }
+.garage-lift-platform { position: absolute; z-index: 3; left: 14%; bottom: 13%; width: 72%; height: 34%; animation: none; }
+.garage-bay.is-running .garage-lift-platform { animation: garageLiftV4 6s cubic-bezier(.55,.04,.45,.96) infinite; }
+.garage-platform-line { position: absolute; left: 0; right: 0; bottom: 14px; height: 12px; border: 2px solid #b8c0cb; background: #4b5660; box-shadow: 0 0 18px rgba(255,255,255,.18); }
+.garage-car-2d { position: absolute; left: 50%; bottom: 22px; width: min(300px, 62%); height: 94px; transform: translateX(-50%); border: 2px solid #ff884f; border-radius: 44px 66px 14px 12px; background: linear-gradient(115deg, #ff5c1a 0 18%, #c94313 52%, #7e260e); box-shadow: inset 0 10px 0 rgba(255,255,255,.18), 0 18px 20px rgba(0,0,0,.48); }
+.garage-car-2d::before { content: ""; position: absolute; left: 22%; top: -38px; width: 47%; height: 48px; border: 2px solid #ff884f; border-bottom: 0; border-radius: 74px 44px 0 0; background: linear-gradient(125deg, rgba(175,224,244,.78), rgba(23,56,78,.95)); transform: skewX(-8deg); }
+.garage-car-2d::after { content: ""; position: absolute; left: 10%; right: 6%; top: 42px; height: 3px; background: rgba(255,230,200,.58); box-shadow: 0 18px 0 rgba(59,12,5,.46); }
+.garage-wheel { position: absolute; z-index: 3; bottom: -13px; width: 48px; height: 48px; border: 9px solid #111418; border-radius: 50%; background: #6c7580; box-shadow: inset 0 0 0 5px #23282e; }
+.garage-wheel-left { left: 16%; }.garage-wheel-right { right: 10%; }
+.garage-piston { position: absolute; z-index: 2; left: 48%; bottom: 11%; width: 34px; height: 48%; border: 4px solid #818b96; background: #ff5c1a; transform-origin: bottom; animation: none; }
+.garage-bay.is-running .garage-piston { animation: garagePistonV4 6s cubic-bezier(.55,.04,.45,.96) infinite; }
+.garage-lift-readout { position: absolute; z-index: 6; left: 22px; top: 22px; display: grid; gap: 8px; color: rgba(242,240,236,.68); font-size: 9px; letter-spacing: .12em; }
+.garage-lift-readout b { color: #ff5c1a; font: 700 28px/1 "Space Grotesk", sans-serif; letter-spacing: -.08em; }
+.garage-lift-readout small { color: rgba(242,240,236,.46); }
+.garage-console strong em { color: #ff5c1a; font: 500 16px "DM Mono", monospace; letter-spacing: -.06em; }
+.garage-console button { margin-top: 18px; border: 0; border-bottom: 1px solid #ff5c1a; background: none; color: #ff5c1a; font: 10px "DM Mono", monospace; cursor: pointer; }
+
+/* Salon: a live brush painting a sculpture */
+.salon-visual[data-salon-brush] { min-height: 610px; transform: none; }
+.salon-brush-stage { position: absolute; inset: 0 8% 0 4%; overflow: hidden; border: 2px solid #231918; background: #d8b2a0; transform: rotate(2deg); box-shadow: 14px 16px 0 rgba(189,93,65,.22); }
+.salon-brush-art { display: block; width: 100%; height: 100%; }
+.salon-stroke { stroke-dasharray: 420; stroke-dashoffset: 420; }
+.salon-brush { transform-box: fill-box; transform-origin: 80% 84%; }
+.salon-brush-label { position: absolute; left: 16px; bottom: 14px; color: #231918; font: 10px "DM Mono", monospace; letter-spacing: .11em; }
+.salon-visual.is-painting .salon-brush { animation: salonBrushV4 3.7s cubic-bezier(.45,.05,.55,.95) infinite; }
+.salon-visual.is-painting .salon-stroke-one { animation: salonStrokeV4 3.7s ease-in-out infinite; }
+.salon-visual.is-painting .salon-stroke-two { animation: salonStrokeV4 3.7s ease-in-out .35s infinite; }
+.salon-visual-note { right: -16px; bottom: 7%; width: 210px; }
+.salon-visual-note strong { font-family: Georgia, serif; }
+
+/* Tattoo: paper, ink and a machine drawing four fresh flashes */
+body.site-tattoo { background: #f5eddf; color: #201c19; font-family: "DM Mono", monospace; }
+.site-tattoo .r-nav { border-bottom: 2px solid rgba(32,28,25,.28); }
+.site-tattoo .r-wordmark { font-family: "Space Grotesk", sans-serif; color: #201c19; }
+.site-tattoo .r-wordmark span, .site-tattoo .r-eyebrow, .tattoo-copy h1 span { color: #e24b2c; }
+.site-tattoo .r-button { border: 2px solid #201c19; background: #201c19; color: #f5eddf; border-radius: 0; }
+.tattoo-copy h1 { font-family: "Space Grotesk", sans-serif; color: #201c19; }
+.tattoo-copy h1 span { text-decoration: underline; text-decoration-thickness: 5px; text-underline-offset: 9px; }
+.tattoo-copy > p:not(.r-eyebrow) { color: #6d625a; }
+.tattoo-stage[data-tattoo-machine] { min-height: 600px; }
+.tattoo-desk { position: absolute; inset: 4% 0 8% 4%; border: 2px solid #201c19; background: #fffaf0; box-shadow: 14px 16px 0 #decdb8; transform: rotate(-2deg); }
+.tattoo-paper-top { display: flex; align-items: center; justify-content: space-between; padding: 17px 20px; border-bottom: 2px solid #201c19; font-size: 10px; letter-spacing: .12em; }
+.tattoo-paper-top b { color: #e24b2c; font-weight: 500; }
+.tattoo-sketch-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; height: calc(100% - 56px); }
+.tattoo-sketch { position: relative; overflow: hidden; min-height: 215px; padding: 16px; border-right: 1px solid rgba(32,28,25,.24); border-bottom: 1px solid rgba(32,28,25,.24); background: rgba(255,255,255,.26); }
+.tattoo-sketch:nth-child(2n) { border-right: 0; }.tattoo-sketch:nth-child(n+3) { border-bottom: 0; }
+.tattoo-sketch svg { display: block; width: 100%; height: 100%; }
+.tattoo-sketch path, .tattoo-sketch circle { fill: none; stroke: #201c19; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 900; stroke-dashoffset: 0; }
+.tattoo-sketch span { position: absolute; left: 16px; bottom: 12px; color: #e24b2c; font-size: 9px; letter-spacing: .11em; }
+.tattoo-sketch.is-active { background: #fff4e1; }
+.tattoo-sketch.is-active path, .tattoo-sketch.is-active circle { animation: tattooDrawV4 2.4s cubic-bezier(.2,.7,.2,1) forwards; }
+.tattoo-machine { position: absolute; z-index: 5; top: 38%; left: -2%; width: 165px; height: 45px; border: 2px solid #201c19; border-radius: 25px 12px 12px 25px; background: #e24b2c; box-shadow: 8px 8px 0 rgba(32,28,25,.18); transform: rotate(-28deg); transform-origin: 18% 50%; }
+.tattoo-machine-grip { position: absolute; left: -52px; top: 10px; width: 64px; height: 23px; border: 2px solid #201c19; border-radius: 14px 0 0 14px; background: #c4b29e; }
+.tattoo-machine i { position: absolute; right: -34px; top: 20px; width: 48px; height: 3px; background: #201c19; transform: rotate(8deg); }
+.tattoo-machine b { position: absolute; left: 20px; top: 13px; color: #fffaf0; font-size: 8px; font-weight: 400; letter-spacing: .08em; }
+.tattoo-stage.is-drawing .tattoo-machine { animation: tattooMachineV4 4s ease-in-out infinite; }
+.tattoo-ink-tray { position: absolute; right: 22px; bottom: 12px; display: flex; gap: 7px; }
+.tattoo-ink-tray i { width: 13px; height: 13px; border: 2px solid #201c19; border-radius: 50%; background: #201c19; }.tattoo-ink-tray i:nth-child(2) { background: #e24b2c; }.tattoo-ink-tray i:nth-child(3) { background: #c4b29e; }
+.tattoo-replay { position: absolute; right: 18px; top: 14px; z-index: 4; padding: 5px 0; border: 0; border-bottom: 1px solid #e24b2c; background: transparent; color: #e24b2c; font: 9px "DM Mono", monospace; cursor: pointer; }
+.tattoo-machine-note { position: absolute; right: -10px; bottom: -4px; display: grid; gap: 7px; max-width: 190px; padding: 15px; background: #201c19; color: #fffaf0; transform: rotate(4deg); box-shadow: 9px 10px 0 rgba(226,75,44,.22); }
+.tattoo-machine-note small { color: #f3b390; font-size: 8px; letter-spacing: .12em; }.tattoo-machine-note strong { font: 26px/.82 "Space Grotesk", sans-serif; letter-spacing: -.08em; }.tattoo-machine-note span { color: rgba(255,250,240,.62); font-size: 9px; line-height: 1.4; }
+.tattoo-ledger { border-top-color: rgba(32,28,25,.3); }.tattoo-ledger .r-section-head h2 span, .tattoo-row small { color: #e24b2c; }
+
+/* Detailing: large generated before/after cars on an obvious track */
+.detail-stage { min-height: 570px; transform: rotate(-2deg); background: #080c13; }
+.detail-stage::before { content: "CYCLE / DIRTY → CLEAN"; }
+.detail-lane { position: absolute; z-index: 1; inset: 19% 4% 12%; border: 1px dashed rgba(150,173,255,.5); background: linear-gradient(180deg, transparent 47%, rgba(78,123,255,.18) 48%, rgba(78,123,255,.18) 51%, transparent 52%); }
+.detail-lane::after { content: ""; position: absolute; inset: 50% 0 auto; height: 2px; background: repeating-linear-gradient(90deg, #96adff 0 50px, transparent 50px 86px); opacity: .7; }
+.detail-lane span { position: absolute; top: 10px; left: 12px; color: #96adff; font-size: 9px; letter-spacing: .12em; }
+.detail-car { z-index: 3; width: 76%; height: auto; aspect-ratio: 1.5; bottom: 13%; border: 1px solid rgba(238,240,247,.36); border-radius: 4px; background-position: center; background-size: cover; box-shadow: 0 22px 30px rgba(0,0,0,.58); animation: none; }
+.detail-car-before { left: -90%; background-image: url(assets/detailing-before.jpg); filter: saturate(.78) contrast(1.05); opacity: 0; }
+.detail-car-after { left: -90%; background-image: url(assets/detailing-after.jpg); filter: saturate(1.08) contrast(1.08); opacity: 0; }
+.detail-stage.is-running .detail-car-before { animation: detailBeforeV4 8s cubic-bezier(.42,.05,.58,.95) infinite; }
+.detail-stage.is-running .detail-car-after { animation: detailAfterV4 8s cubic-bezier(.42,.05,.58,.95) infinite; }
+.detail-wash { z-index: 5; top: 13%; bottom: 8%; left: -12%; height: auto; width: 5px; animation: none; }
+.detail-stage.is-running .detail-wash { animation: detailWashV4 8s ease-in-out infinite; }
+.detail-before-label, .detail-after-label { animation: none; }.detail-stage.is-running .detail-before-label { animation: detailBeforeLabelV4 8s infinite; }.detail-stage.is-running .detail-after-label { animation: detailAfterLabelV4 8s infinite; }
+.detail-stage-status span { text-align: center; }
+
+/* Dentistry: opening frame is the result — a bright white smile */
+.dental-stage { min-height: 590px; transform: none; }
+.dental-smile-art { position: absolute; inset: 4% 0 8% 0; overflow: hidden; border: 2px solid #132724; border-radius: 48% 42% 38% 50%; background: radial-gradient(circle at 50% 45%, #effffc, #b8ded7); box-shadow: 22px 25px 0 rgba(15,157,140,.16); transform: rotate(-4deg); }
+.dental-smile-kicker { position: absolute; z-index: 2; left: 20px; top: 18px; color: #0f9d8c; font: 10px "DM Mono", monospace; letter-spacing: .12em; }.dental-smile-svg { display: block; width: 100%; height: 100%; }
+.dental-shine { transform-box: fill-box; transform-origin: center; opacity: 0; }.dental-stage.is-shining .dental-shine { animation: dentalShineV4 3.8s ease-in-out infinite; }.dental-sparkles { animation: dentalSparkV4 3.8s ease-in-out infinite; transform-origin: center; }
+.dental-smile-caption { position: absolute; left: 20px; bottom: 16px; color: #132724; font: 10px "DM Mono", monospace; letter-spacing: .1em; }
+.dental-slip { right: -5%; bottom: 4%; width: 220px; transform: rotate(5deg); }.dental-slip button { color: #8cd6c9; }
+
+@keyframes banyaLadleV4 { 0%,100% { transform: rotate(0deg); } 28% { transform: rotate(-18deg); } 52% { transform: rotate(30deg); } 72% { transform: rotate(2deg); } }
+@keyframes banyaWaterV4 { 0%,20% { stroke-dashoffset: 90; opacity: 0; } 30% { opacity: 1; } 54% { stroke-dashoffset: 0; opacity: 1; } 68%,100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes banyaSteamV4 { 0% { stroke-dashoffset: 280; opacity: 0; } 22% { opacity: .9; } 82% { stroke-dashoffset: 0; opacity: .55; } 100% { stroke-dashoffset: -20; opacity: 0; } }
+@keyframes banyaSparksV4 { 0%,50% { transform: scale(.8); opacity: .2; } 75%,100% { transform: scale(1.4); opacity: 0; } }
+@keyframes garageLiftV4 { 0%,12% { transform: translateY(0); } 45%,68% { transform: translateY(-170px); } 87%,100% { transform: translateY(0); } }
+@keyframes garagePistonV4 { 0%,12% { transform: scaleY(.35); } 45%,68% { transform: scaleY(1); } 87%,100% { transform: scaleY(.35); } }
+@keyframes salonBrushV4 { 0%,8% { transform: translate(0,0) rotate(0deg); } 42% { transform: translate(-205px,170px) rotate(-8deg); } 66%,100% { transform: translate(0,0) rotate(0deg); } }
+@keyframes salonStrokeV4 { 0%,25% { stroke-dashoffset: 420; } 58%,100% { stroke-dashoffset: 0; } }
+@keyframes tattooDrawV4 { 0% { stroke-dashoffset: 900; } 100% { stroke-dashoffset: 0; } }
+@keyframes tattooMachineV4 { 0%,10% { transform: translate(0,0) rotate(-28deg); } 42% { transform: translate(270px,50px) rotate(-20deg); } 74% { transform: translate(100px,250px) rotate(-30deg); } 100% { transform: translate(0,0) rotate(-28deg); } }
+@keyframes detailBeforeV4 { 0%,8% { left: -24%; opacity: 1; } 17%,45% { left: 12%; opacity: 1; } 56%,100% { left: 112%; opacity: 0; } }
+@keyframes detailAfterV4 { 0%,50% { left: -90%; opacity: 0; } 62% { left: -42%; opacity: 1; } 79%,88% { left: 12%; opacity: 1; } 100% { left: 112%; opacity: 0; } }
+@keyframes detailWashV4 { 0%,38% { left: -12%; opacity: 0; } 45% { opacity: 1; } 67% { left: 112%; opacity: 1; } 76%,100% { left: 112%; opacity: 0; } }
+@keyframes detailBeforeLabelV4 { 0%,53% { opacity: 1; } 61%,100% { opacity: 0; } }
+@keyframes detailAfterLabelV4 { 0%,60% { opacity: 0; } 67%,100% { opacity: 1; } }
+@keyframes dentalShineV4 { 0%,18% { transform: translateX(-190px) rotate(-5deg); opacity: 0; } 32% { opacity: .88; } 75% { transform: translateX(300px) rotate(-5deg); opacity: .88; } 90%,100% { transform: translateX(350px) rotate(-5deg); opacity: 0; } }
+@keyframes dentalSparkV4 { 0%,100% { opacity: .38; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.18); } }
+
+@media (max-width: 900px) {
+  .tattoo-stage[data-tattoo-machine] { min-height: 560px; }
+  .tattoo-machine-note { right: 0; }
+  .detail-car { width: 80%; }
+}
+
+@media (max-width: 620px) {
+  .banya-stage[data-banya-stage], .salon-visual[data-salon-brush], .tattoo-stage[data-tattoo-machine], .dental-stage { min-height: 420px; }
+  .banya-drawing { inset: 0 0 0 3%; }.banya-live { right: -4px; width: 166px; padding: 12px; }.banya-live b { font-size: 22px; }
+  .salon-brush-stage { inset: 0 0 0 2%; }.salon-visual-note { right: -5px; bottom: 2%; width: 170px; padding: 13px; }.salon-visual-note strong { font-size: 22px; }
+  .garage-bay[data-garage-lift] { min-height: 390px; }.garage-lift-readout { left: 13px; top: 14px; }.garage-lift-readout b { font-size: 22px; }.garage-car-2d { width: 210px; height: 68px; }.garage-car-2d::before { top: -28px; height: 38px; }.garage-wheel { width: 34px; height: 34px; bottom: -11px; border-width: 6px; }.garage-lift-platform { bottom: 12%; }.garage-bay.is-running .garage-lift-platform { animation-name: garageLiftMobileV4; }
+  .garage-console { right: 4px; bottom: 12px; width: 172px; padding: 12px; }.garage-console strong { font-size: 25px; }
+  .tattoo-desk { inset: 0 0 8% 0; }.tattoo-sketch { min-height: 156px; padding: 9px; }.tattoo-sketch span { left: 9px; bottom: 8px; font-size: 8px; }.tattoo-paper-top { padding: 12px; }.tattoo-machine { transform: scale(.75) rotate(-28deg); transform-origin: 18% 50%; }.tattoo-stage.is-drawing .tattoo-machine { animation-name: tattooMachineMobileV4; }.tattoo-machine-note { right: -4px; bottom: -2px; padding: 11px; }.tattoo-machine-note strong { font-size: 21px; }
+  .detail-stage { min-height: 410px; }.detail-car { width: 82%; bottom: 14%; }.detail-stage-status { flex-wrap: wrap; }.detail-stage-status span { order: 3; width: 100%; }.detail-lane { inset: 18% 3% 12%; }
+  .dental-smile-art { inset: 0 0 0 0; }.dental-slip { right: -4px; width: 182px; padding: 14px; }.dental-slip strong { font-size: 18px; }.dental-smile-caption { left: 12px; bottom: 10px; font-size: 8px; }.dental-smile-kicker { left: 12px; top: 12px; font-size: 8px; }
+}
+@keyframes garageLiftMobileV4 { 0%,12% { transform: translateY(0); } 45%,68% { transform: translateY(-108px); } 87%,100% { transform: translateY(0); } }
+@keyframes tattooMachineMobileV4 { 0%,10% { transform: translate(0,0) scale(.7) rotate(-28deg); } 42% { transform: translate(122px,20px) scale(.7) rotate(-20deg); } 74% { transform: translate(50px,125px) scale(.7) rotate(-30deg); } 100% { transform: translate(0,0) scale(.7) rotate(-28deg); } }

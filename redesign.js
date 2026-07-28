@@ -133,6 +133,103 @@
     requestAnimationFrame(draw);
   }
 
+  function initBanyaCycle() {
+    const stage = document.querySelector('[data-banya-stage]');
+    const replay = document.querySelector('[data-banya-replay]');
+    if (!stage) return;
+    const run = () => {
+      stage.classList.remove('is-running');
+      void stage.offsetWidth;
+      stage.classList.add('is-running');
+    };
+    replay?.addEventListener('click', (event) => { event.stopPropagation(); run(); });
+    stage.addEventListener('click', (event) => { if (!event.target.closest('button')) run(); });
+    if (!reduced) window.setTimeout(run, 180);
+    else stage.classList.add('is-running');
+  }
+
+  function initGarageLift() {
+    const stage = document.querySelector('[data-garage-lift]');
+    const replay = document.querySelector('[data-garage-replay]');
+    const status = document.querySelector('[data-lift-status]');
+    if (!stage) return;
+    let timers = [];
+    const clearTimers = () => { timers.forEach((timer) => window.clearTimeout(timer)); timers = []; };
+    const run = () => {
+      clearTimers();
+      stage.classList.remove('is-running');
+      void stage.offsetWidth;
+      stage.classList.add('is-running');
+      if (!status) return;
+      status.textContent = 'LIFTING';
+      timers.push(window.setTimeout(() => { status.textContent = 'RAISED'; }, 2700));
+      timers.push(window.setTimeout(() => { status.textContent = 'LOWERING'; }, 4100));
+      timers.push(window.setTimeout(() => { status.textContent = 'LOWERED'; }, 5900));
+    };
+    replay?.addEventListener('click', (event) => { event.stopPropagation(); run(); });
+    stage.addEventListener('click', (event) => { if (!event.target.closest('button')) run(); });
+    stage.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); run(); }
+    });
+    if (!reduced) window.setTimeout(run, 180);
+    else { stage.classList.add('is-running'); if (status) status.textContent = 'RAISED'; }
+  }
+
+  function initSalonBrush() {
+    const stage = document.querySelector('[data-salon-brush]');
+    const replay = document.querySelector('[data-salon-replay]');
+    if (!stage) return;
+    const run = () => {
+      stage.classList.remove('is-painting');
+      void stage.offsetWidth;
+      stage.classList.add('is-painting');
+    };
+    replay?.addEventListener('click', (event) => { event.stopPropagation(); run(); });
+    if (!reduced) window.setTimeout(run, 220);
+    else stage.classList.add('is-painting');
+  }
+
+  function initTattooMachine() {
+    const stage = document.querySelector('[data-tattoo-machine]');
+    const sketches = Array.from(document.querySelectorAll('[data-sketch]'));
+    const replay = document.querySelector('[data-tattoo-replay]');
+    const counter = document.querySelector('[data-tattoo-counter]');
+    if (!stage || !sketches.length) return;
+    let current = -1;
+    let timer;
+    const show = (index) => {
+      current = index;
+      sketches.forEach((sketch, sketchIndex) => {
+        sketch.classList.toggle('is-active', sketchIndex === index);
+        if (sketchIndex === index) { void sketch.offsetWidth; }
+      });
+      if (counter) counter.textContent = `0${index + 1} / 04`;
+    };
+    const next = () => show((current + 1) % sketches.length);
+    const start = () => {
+      window.clearInterval(timer);
+      next();
+      if (!reduced) timer = window.setInterval(next, 4200);
+    };
+    replay?.addEventListener('click', start);
+    stage.classList.add('is-drawing');
+    start();
+  }
+
+  function initDentalSmile() {
+    const stage = document.querySelector('[data-dental-smile]');
+    const replay = document.querySelector('[data-dental-replay]');
+    if (!stage) return;
+    const run = () => {
+      stage.classList.remove('is-shining');
+      void stage.offsetWidth;
+      stage.classList.add('is-shining');
+    };
+    replay?.addEventListener('click', run);
+    if (!reduced) window.setTimeout(run, 260);
+    else stage.classList.add('is-shining');
+  }
+
   function initDetailingCycle() {
     const stage = document.querySelector('[data-detail-stage]');
     const replay = document.querySelector('[data-detail-replay]');
@@ -153,6 +250,11 @@
     initTilt();
     initBanyaSteam();
     initInk();
+    initBanyaCycle();
+    initGarageLift();
+    initSalonBrush();
+    initTattooMachine();
+    initDentalSmile();
     initDetailingCycle();
   });
 })();
