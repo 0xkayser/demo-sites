@@ -625,6 +625,7 @@ body.site-tattoo { background: #f5eddf; color: #201c19; font-family: "DM Mono", 
 }
 @keyframes garageLiftMobileV4 { 0%,12% { transform: translateY(0); } 45%,68% { transform: translateY(-108px); } 87%,100% { transform: translateY(0); } }
 @keyframes tattooMachineMobileV4 { 0%,10% { transform: translate(0,0) scale(.7) rotate(-28deg); } 42% { transform: translate(122px,20px) scale(.7) rotate(-20deg); } 74% { transform: translate(50px,125px) scale(.7) rotate(-30deg); } 100% { transform: translate(0,0) scale(.7) rotate(-28deg); } }
+<<<<<<< HEAD
 
 
 /* ================= motion v2 + salon arch (polish pass) ================= */
@@ -660,3 +661,5 @@ body.site-tattoo { background: #f5eddf; color: #201c19; font-family: "DM Mono", 
 @media (prefers-reduced-motion: reduce) {
   .index-orbit::before, .index-orbit::after, .index-object { animation: none !important; }
 }
+=======
+>>>>>>> 1082a9873293f9e6b9c2cfdb37d31a7108240095
