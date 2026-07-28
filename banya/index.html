@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../redesign.css">
   <script src="../redesign.js" defer></script>
+  <script src="../stage.js" defer></script>
 </head>
 <body class="rebuild site-banya">
   <div class="r-page">
@@ -22,34 +23,19 @@
     <main>
       <section class="r-wrap banya-hero">
         <div class="banya-copy" data-reveal>
-          <p class="r-eyebrow">wood / fire / water</p>
+          <p class="r-eyebrow">дерево · огонь · вода</p>
           <h1>Пар начинается <em>раньше</em> огня.</h1>
           <p>Три парные на дровах, ледяная купель, веники и банщик, который слышит камни. Для двоих или компании до двенадцати.</p>
           <a class="r-button" href="#book">выбрать парную</a>
           <div class="banya-facts"><div><strong>3</strong>парные</div><div><strong>90°</strong>стабильный жар</div><div><strong>12</strong>гостей</div></div>
         </div>
-        <div class="banya-stage" data-banya-stage data-reveal>
-          <div class="banya-drawing" aria-label="2D-анимация: ковш льёт воду на камни, поднимается пар">
-            <svg class="banya-art" viewBox="0 0 720 560" role="img" aria-hidden="true">
-              <defs>
-                <linearGradient id="banyaWall" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#7d432d"/><stop offset="1" stop-color="#2c1712"/></linearGradient>
-              </defs>
-              <rect width="720" height="560" fill="url(#banyaWall)"/>
-              <g class="banya-planks" opacity=".22"><path d="M0 96H720M0 188H720M0 280H720M0 372H720M0 464H720"/><path d="M90 0v560M210 0v560M340 0v560M490 0v560M620 0v560"/></g>
-              <ellipse cx="362" cy="463" rx="218" ry="34" fill="#160c0a" opacity=".72"/>
-              <rect x="180" y="358" width="360" height="112" rx="22" fill="#1a1110" stroke="#d48b5f" stroke-width="4"/>
-              <path d="M202 370h316v78H202z" fill="#29201c"/>
-              <g class="banya-stones" fill="#c9a47c" stroke="#6a4935" stroke-width="4"><ellipse cx="254" cy="401" rx="34" ry="20"/><ellipse cx="320" cy="390" rx="34" ry="21"/><ellipse cx="388" cy="400" rx="36" ry="20"/><ellipse cx="454" cy="389" rx="35" ry="21"/><ellipse cx="492" cy="420" rx="31" ry="18"/></g>
-              <path d="M240 468h246" stroke="#e3a36d" stroke-width="6" stroke-linecap="round" opacity=".62"/>
-              <g class="banya-ladle"><path d="M566 122L424 338" stroke="#7a442d" stroke-width="14" stroke-linecap="round"/><path d="M566 122L424 338" stroke="#d99b68" stroke-width="5" stroke-linecap="round"/><ellipse cx="582" cy="103" rx="45" ry="23" fill="#c88a58" stroke="#4f2a20" stroke-width="7" transform="rotate(28 582 103)"/></g>
-              <path class="banya-water" d="M423 329C414 349 420 365 407 389" fill="none" stroke="#d7eff0" stroke-width="8" stroke-linecap="round"/>
-              <g class="banya-steam" fill="none" stroke="#f4e4cf" stroke-width="8" stroke-linecap="round"><path d="M300 360C265 317 328 291 290 249C262 219 303 188 280 151"/><path d="M384 360C348 320 415 287 378 242C349 208 393 181 368 140"/><path d="M462 360C430 321 492 291 456 250C428 219 470 188 450 156"/></g>
-              <g class="banya-sparks" fill="#ffd99e"><circle cx="316" cy="337" r="5"/><circle cx="365" cy="327" r="4"/><circle cx="440" cy="340" r="5"/></g>
-            </svg>
-            <span class="banya-drawing-label">2D LIVE / POUR 01</span>
+        <div class="banya-stage steam-stage" data-reveal>
+          <div class="steam-frame">
+            <div class="steam-photo" role="img" aria-label="Парная на дровах"></div>
+            <canvas class="steam-canvas" data-steam aria-hidden="true"></canvas>
+            <div class="steam-heat"><b>92°</b><span>в парной сейчас</span></div>
           </div>
-          <div class="banya-live"><small>LIVE / STEAM ROOM</small><b>вода<br>на камни</b><button type="button" data-banya-replay>повторить ритуал ↻</button></div>
-          <span class="banya-stage-caption">pour / rise / settle</span>
+          <div class="steam-note"><small>парная «Кедр»</small><b>вода на камни —<br>и пар садится на плечи</b></div>
         </div>
       </section>
 
@@ -67,7 +53,7 @@
         <p>Потом камни отвечают жаром, пар садится на дерево, и разговоры становятся тише. Мы собрали сайт вокруг этого момента — не вокруг списка услуг.</p>
       </section>
 
-      <section class="r-wrap banya-book" id="book" data-reveal><div class="banya-book-inner"><h2>Свободные окна<br>на выходные.</h2><a class="r-button" href="mailto:hello@example.com">написать в WhatsApp ↗</a></div></section>
+      <section class="r-wrap banya-book" id="book" data-reveal><div class="banya-book-inner"><h2>Свободные окна<br>на выходные.</h2><a class="r-button" href="mailto:ilyabargmgmt@gmail.com">написать в WhatsApp ↗</a></div></section>
     </main>
     <footer class="r-wrap banya-footer">Банный дом «Пар» — вымышленный бренд, demo / ежедневно 10:00–02:00</footer>
   </div>

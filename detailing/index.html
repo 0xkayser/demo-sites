@@ -10,33 +10,33 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../redesign.css">
   <script src="../redesign.js" defer></script>
+  <script src="../stage.js" defer></script>
 </head>
 <body class="rebuild site-detailing">
   <div class="r-page">
     <header class="r-wrap r-nav">
       <a class="r-wordmark" href="../">BLIK<span>_</span>DETAILING</a>
-      <nav class="r-nav-links"><a href="#services">services</a><a href="#process">cycle</a><a href="#book">send photo</a></nav>
+      <nav class="r-nav-links"><a href="#services">услуги</a><a href="#process">процесс</a><a href="#book">прислать фото</a></nav>
       <a class="r-button" href="#book">рассчитать ↗</a>
     </header>
 
     <main>
       <section class="r-wrap detail-hero">
         <div class="detail-copy" data-reveal>
-          <p class="r-eyebrow">finish lab / live cycle</p>
+          <p class="r-eyebrow">лаборатория финиша</p>
           <h1>Грязный<br><span>въезжает.</span><br>Чистый<br>уезжает.</h1>
           <p>Полировка, керамика, химчистка и плёнка. Не обещаем «как новый» — показываем разницу в процессе.</p>
           <a class="r-button" href="#book">прислать фото авто</a>
         </div>
         <div class="detail-stage-wrap" data-reveal>
-          <div class="detail-stage" data-detail-stage tabindex="0" role="button" aria-label="Перезапустить цикл грязный чистый">
-            <div class="detail-lane"><span>BEFORE / AFTER TRACK</span></div>
-            <div class="detail-car detail-car-before"></div>
-            <div class="detail-car detail-car-after"></div>
-            <div class="detail-wash"></div>
-            <span class="detail-stage-label detail-before-label">stage 01 / dust</span>
-            <span class="detail-stage-label detail-after-label">stage 02 / ceramic</span>
+          <div class="cmp" data-compare role="slider" aria-label="Сравнение до и после полировки" tabindex="0">
+            <div class="cmp-before"></div>
+            <div class="cmp-after"></div>
+            <div class="cmp-handle"><i></i></div>
+            <span class="cmp-tag cmp-tag-l">до</span>
+            <span class="cmp-tag cmp-tag-r">после</span>
           </div>
-          <div class="detail-stage-status"><b>LIVE CYCLE</b><span>грязный въезжает → чистый выезжает</span><button class="r-button" data-detail-replay type="button">replay ↻</button></div>
+          <div class="cmp-note"><b>Полировка + керамика</b><span>потяните шторку — разница видна без слов</span></div>
         </div>
       </section>
 
@@ -57,7 +57,7 @@
         <div class="detail-step"><small>04</small><strong>выдача</strong><span>гарантия и уход после</span></div>
       </section>
 
-      <section class="r-wrap detail-book" id="book" data-reveal><h2>Отправьте<br>фото авто.</h2><div><p>Посчитаем точную стоимость за 15 минут. Без визита, звонка и угадывания по марке.</p><a class="r-button" href="mailto:hello@example.com">отправить в WhatsApp ↗</a></div></section>
+      <section class="r-wrap detail-book" id="book" data-reveal><h2>Отправьте<br>фото авто.</h2><div><p>Посчитаем точную стоимость за 15 минут. Без визита, звонка и угадывания по марке.</p><a class="r-button" href="mailto:ilyabargmgmt@gmail.com">отправить в WhatsApp ↗</a></div></section>
     </main>
     <footer class="r-wrap detail-footer">BLIK Detailing — вымышленный бренд, demo / ежедневно 9:00–21:00</footer>
   </div>
