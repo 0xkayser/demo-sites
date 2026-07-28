@@ -1,8 +1,8 @@
 {
-  "pid": 11874,
-  "port": 15761,
-  "token": "073dbaf0-1489-40ba-8338-60f4b676c2fb",
-  "startedAt": "2026-07-27T22:05:42.855Z",
+  "pid": 19363,
+  "port": 54891,
+  "token": "5daaf79b-501f-4ef4-bce1-c0840ecfdcc1",
+  "startedAt": "2026-07-28T00:30:35.484Z",
   "serverPath": "/Users/jopajopish/.claude/skills/gstack/browse/src/server.ts",
   "mode": "launched",
   "configHash": "303a7eeccc03078b"

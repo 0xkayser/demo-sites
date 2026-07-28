@@ -8,18 +8,19 @@
       return;
     }
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+      const hits = entries.filter(e => e.isIntersecting)
+        .sort((a, b) => a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top);
+      hits.forEach((entry, i) => {
+        entry.target.style.setProperty('--rd', `${Math.min(i * 0.09, 0.36)}s`);
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.14 });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     elements.forEach((element) => observer.observe(element));
   }
 
   function initTilt() {
-    if (reduced || !window.PointerEvent) return;
+    return; // v2: мышиный tilt убран — орбита дышит сама, CSS-анимациями
     document.querySelectorAll('[data-tilt]').forEach((element) => {
       element.addEventListener('pointermove', (event) => {
         const rect = element.getBoundingClientRect();
